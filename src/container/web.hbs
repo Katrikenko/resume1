@@ -1,11 +1,13 @@
 <div>
     {{#with web}}
     <ul>
+        {{> title data="Web Languages" big=true}}
         {{#each languages}}
         <li>
             <b><ins>{{name}}</ins></b> ({{version}})
             <p>{{description}} </p>
             {{#each elements}}
+            {{> title data="Element and attributes"}}
             <p><code><b>{{name}}:</b></code> {{description}}</p>
             <ul>
                 {{#each attributes}}
@@ -20,6 +22,7 @@
         </li>
         <div>
             {{#each properties}}
+            {{> title data="Property & values:"}}
             <p><b><code>{{name}}:</code></b> {{description}}</p>
             <div>
                 {{#each values}}
@@ -30,10 +33,10 @@
         </div>
         <div>
             {{#each functions}}
-            <p><code><b>{{name}}:</b></code> {{description}}</p>
+            <p><ins>Function:</ins> <code><b>{{name}}:</b></code> {{description}}</p>
             <div>
                 {{#each parameters}}
-                <p><b>{{name}}</b> ({{type}}): {{description}}</p>
+                <p><ins>Parameter:</ins> <b>{{name}}</b> ({{type}}): {{description}}</p>
                 {{/each}}
             </div>
             {{/each}}
