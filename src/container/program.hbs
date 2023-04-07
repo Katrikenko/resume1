@@ -29,13 +29,14 @@
                             </address>
                             {{/with}}
                             <br>
+                            {{> title data="Exhibitions:"}}
                             {{#each exhibits}}
                             <li>
                                 <b><em>{{name}}</em></b>
                                 {{#if artist}}
-                                <p>{{artist}}</p>
+                                <p>({{artist}})</p>
                                 {{else}}
-                                <p>Unknown</p>
+                                <p>(Unknown)</p>
                                 {{/if}}
                                 <em>{{description}}</em>
                                 {{#if audio_guide}}
@@ -51,6 +52,7 @@
                         <div>
                             {{#if details.venue}}
                             {{#with details.venue}}
+                            <br>
                             <b>{{name}}</b>
                             {{#with location}}
                             <address>
@@ -62,6 +64,7 @@
                             <br>
                             {{/with}}
                             <div>
+                                {{> title data="Performers:"}}
                                 {{#each details.performers}}
                                 <li>
                                     {{name}}
@@ -73,8 +76,10 @@
                         </div>
                         <div>
                             {{#with details.guide}}
-                            {{name}}, <em>{{language}}</em> ({{rating}})
+                            <p><b>Guide:</b> {{name}}, <em>{{language}}</em> ({{rating}})</p>
                             {{/with}}
+                            <br>
+                            <br>
                         </div>
                     </ul>
                 </li>
