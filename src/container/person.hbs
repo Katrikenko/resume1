@@ -2,14 +2,16 @@
     {{#with person}}
     <div>
         <h1>{{name}}, {{age}}</h1>
-        <p>({{gender}})</p>
+        <p><small>({{gender}})</small></p>
     </div>
     <div>
-        {{#each address}}
-        <em>{{this}}</em>
-        {{/each}}
-        <hr>
+        <address>
+            {{#each address}}
+            <em>{{this}}</em>
+            {{/each}}
+        </address>
     </div>
+    <hr>
     <section>
         {{> title data="Education" big=true}}
         <div>
