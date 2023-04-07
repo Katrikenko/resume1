@@ -1,0 +1,127 @@
+<div>
+    <section>
+        <h1>{{name}}</h1>
+        <hr>
+        <br>
+        {{birthdate}} ({{birthplace}}) —
+        <br>
+        {{deathdate}} ({{deathplace}})
+        <br>
+        <br>
+        <em>{{nationality}}
+            <br>
+            {{occupation}}
+        </em>
+        <br>
+    </section>
+    <ul>
+        {{#each known_for}}
+        <li>{{this}}</li>
+        {{/each}}
+    </ul>
+    <section>
+        <div>
+            {{> title data="Education" big=true}}
+            <ul>
+                {{#each education}}
+                <li>
+                    {{degree}} <em>({{field}})</em>
+                    <br>
+                    {{institution}} <em>({{year}})</em>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </section>
+    <section>
+        {{> title data="Publications" big=false}}
+        <ul>
+            {{#each notable_publications}}
+            <li>
+                <em>{{title}} ({{year}})</em>
+                <br>
+                {{publisher}}
+            </li>
+            {{/each}}
+        </ul>
+    </section>
+    <section>
+        {{> title data="Partners" big=false}}
+        <ul>
+            {{#each partners}}
+            <li>
+                <em>{{name}} ({{years}})</em>
+                <br>
+                {{relationship}}
+            </li>
+            {{/each}}
+        </ul>
+    </section>
+    <section>
+        {{> title data="Awards" big=false}}
+        <hr>
+        <div>
+            {{#each awards}}
+            <li>
+                <em>{{title}} ({{year}})</em>
+                <br>
+                <p>{{description}}</p>
+            </li>
+            {{/each}}
+        </div>
+    </section>
+    <section>
+        <table style="border: 1px solid black; width:100%">
+            <tr>
+                <th style="border: 1px solid black">Influences</th>
+                <th style="border: 1px solid black">Influenced</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black">
+                    <ul>
+                        {{#each influences}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                </td>
+                <td style="border: 1px solid black">
+                    <ul>
+                        {{#each influenced}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </section>
+    <section>
+        {{> title data="Quotes:"}}
+        <div>
+            {{#each quotes}}
+            <p><q>{{this}}</q></p>
+            {{/each}}
+        </div>
+    </section>
+    <section>
+        {{> title data="Discoveries and Contributions"}}
+        <ul>
+            {{#each major_discoveries}}
+            <li>
+                <em>{{title}} ({{year}})</em>
+                <br>
+                <p>{{description}}</p>
+            </li>
+            {{/each}}
+        </ul>
+        <div>
+            {{#with contributions}}
+            <li>
+                <em>{{title}} ({{year}})</em>
+                <br>
+                <p>{{description}}</p>
+                <em>({{field}})</em>
+            </li>
+            {{/with}}
+        </div>
+    </section>
+</div>
