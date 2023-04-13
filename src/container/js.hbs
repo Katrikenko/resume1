@@ -1,0 +1,132 @@
+<div>
+    <section>
+        <h1><ins>{{name}}</ins></h1>
+        <p>{{description}}</p>
+        <br>
+        <div>
+            {{#with history}}
+            <p><b>Found:</b> {{founder}} ({{year}})</p>
+            {{/with}}
+        </div>
+        <hr>
+        <div>
+            <ul>
+                {{> title data="Types of JS"}}
+                {{#each types}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+        </div>
+        <hr>
+        <div>
+            {{> title data="JavaScript Syntax"}}
+            {{#with syntax}}
+            <table style="border: 1px solid black; width:100%">
+                <tr>
+                    <th style="border: 1px solid black">Variables</th>
+                    <th style="border: 1px solid black">Functions</th>
+                    <th style="border: 1px solid black">Conditionals</th>
+                    <th style="border: 1px solid black">Loops</th>
+                    <th style="border: 1px solid black">Classes</th>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black">
+                        <ul>
+                            {{#each variables}}
+                            <li><code>{{this}}</code></li>
+                            {{/each}}
+                        </ul>
+                    </td>
+                    <td style="border: 1px solid black">
+                        <ul>
+                            {{#each functions}}
+                            <li><code>{{this}}</code></li>
+                            {{/each}}
+                        </ul>
+                    </td>
+                    <td style="border: 1px solid black">
+                        <ul>
+                            {{#each conditionals}}
+                            <li><code>{{this}}</code></li>
+                            {{/each}}
+                        </ul>
+                    </td>
+                    <td style="border: 1px solid black">
+                        <ul>
+                            {{#each loops}}
+                            <li><code>{{this}}</code></li>
+                            {{/each}}
+                        </ul>
+                    </td>
+                    <td style="border: 1px solid black">
+                        <ul>
+                            {{#each classes}}
+                            <li><code>{{this}}</code></li>
+                            {{/each}}
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+            {{/with}}
+        </div>
+        <hr>
+        <div>
+            <ul>
+                {{> title data="Features"}}
+                {{#each features}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+        </div>
+        <hr>
+        <div>
+            <table style="border: 1px solid black; width:100%">
+                <tr>
+                    <th style="border: 1px solid black">Libraries</th>
+                    <th style="border: 1px solid black">Tools</th>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black">
+                        <ul>
+                            {{#each libraries}}
+                            <li>{{this}}</li>
+                            {{/each}}
+                        </ul>
+                    </td>
+                    <td style="border: 1px solid black">
+                        <ul>
+                            {{#each tools}}
+                            <li>{{this}}</li>
+                            {{/each}}
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <hr>
+        <div>
+            <p>
+                <button class="btn btn-info" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+                    Community
+                </button>
+            </p>
+            <div style="min-height: 120px;">
+                <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                    <div class="card card-body" style="width: 300px;">
+                        <ul>
+                            {{#each community}}
+                            <p>
+                                {{name}}
+                                ({{type}})
+                            </p>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</div>
