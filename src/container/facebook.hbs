@@ -1,0 +1,78 @@
+<div>
+    <h1>{{name}}</h1>
+    <ul>
+        {{#each users}}
+        <h2><ins>User</ins></h2>
+        <li>
+            <b>Name (Age):</b> <em>{{name}} ({{age}})</em>
+            <br>
+            <br>
+            <b>Gender / id:</b> <em>{{gender}}/{{id}}</em>
+            <br>
+            <hr>
+            <ul>
+                {{#each friends}}
+                <h3><ins>Friends:</ins></h3>
+                <li>
+                    <b>Name (Age):</b> <em>{{name}} ({{age}})</em>
+                    <br>
+                    <br>
+                    <b>Gender / id:</b> <em>{{gender}}/{{id}}</em>
+
+                    {{#if mutual_friends}}
+                    <h3><ins>Mutual friends:</ins></h3>
+                    <ul>
+                        {{#each mutual_friends}}
+                        <li>
+                            <b>Name (Age):</b> <em>{{name}} ({{age}})</em>
+                            <br>
+                            <br>
+                            <b>Gender / id:</b> <em>{{gender}}/{{id}}</em>
+                            <br>
+                            <br>
+                        </li>
+                        {{/each}}
+                    </ul>
+                    <hr>
+                    {{/if}}
+                </li>
+                {{/each}}
+            </ul>
+            <div>
+                {{#if groups}}
+                <h3><ins>Groups:</ins></h3>
+                <ul>
+                    {{#each groups}}
+                    <li>
+                        <b>Name (id):</b> <em>{{name}} ({{id}})</em>
+                        <br>
+                        <br>
+                        <b>Description:</b> <em>{{description}}</em>
+                        <br>
+
+                        {{#if members}}
+                        <h3><ins>Members:</ins></h3>
+                        <ul>
+                            {{#each members}}
+                            <li>
+                                <b>Name (Age):</b> <em>{{name}} ({{age}})</em>
+                                <br>
+                                <br>
+                                <b>Gender / id:</b> <em>{{gender}}/{{id}}</em>
+                                <br>
+                                <br>
+                            </li>
+                            {{/each}}
+                        </ul>
+                        <hr>
+                        {{/if}}
+
+                    </li>
+                    {{/each}}
+                </ul>
+                {{/if}}
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+</div>
