@@ -4,11 +4,19 @@
             {{#each breadcrumb}}
             <li class="breadcrumb-item">
 
+
                 {{#unless url}}
                 {{name}}
                 {{else}}
                 <a href="{{url}}">{{name}}</a>
                 {{/unless}}
+
+                {{#if isDisabled}}
+                {{name}}
+                {{else}}
+                <a href="{{url}}">{{name}}</a>
+                {{/if}}
+
 
             </li>
             {{/each}}
