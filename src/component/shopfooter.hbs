@@ -1,0 +1,16 @@
+<div class="row">
+    <hr>
+    <div class="nav m-2">
+        {{#each footer}}
+        <div class="nav-item">
+            {{#each this}}
+            {{#if isDisabled}}
+            <a href="{{link}}" class="nav-link disabled">{{text}}</a>
+            {{else}}
+            <a href="{{link}}" class="nav-link">{{text}}</a>
+            {{/if}}
+            {{/each}}
+        </div>
+        {{/each}}
+    </div>
+</div>
