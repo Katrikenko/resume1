@@ -708,8 +708,9 @@ router.get('/facebook', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
+
   res.render('facebook', {
-    layout: BaseAudioContext,
+    layout: 'basic',
     name: 'Facebook',
     users: [
       {
@@ -1058,82 +1059,84 @@ router.get('/car', function (req, res) {
 // ================================================================
 
 router.get('/js', function (req, res) {
-  // res.render генерує нам HTML сторінку
+  router.get('/js', function (req, res) {
+    // res.render генерує нам HTML сторінку
 
-  //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('js', {
-    layout: 'basic',
-    name: 'JavaScript',
-    description:
-      'JavaScript is a popular high-level, dynamic, and interpreted programming language.',
-    history: {
-      year: 1995,
-      founder: 'Brendan Eich',
-    },
-    types: [
-      'Number',
-      'String',
-      'Boolean',
-      'Null',
-      'Undefined',
-      'Symbol',
-      'Object',
-    ],
-    syntax: {
-      variables: ['var', 'let', 'const'],
-      functions: ['function'],
-      conditionals: ['if', 'else', 'switch'],
-      loops: ['for', 'while', 'do-while'],
-      classes: ['class'],
-    },
-    features: [
-      'First-class functions',
-      'Closures',
-      'Dynamic typing',
-      'Prototype-based inheritance',
-      'Asynchronous programming with Promises and async/await',
-      'Modules with import/export statements',
-    ],
-    libraries: [
-      'jQuery',
-      'React',
-      'Angular',
-      'Vue',
-      'Node.js',
-      'Express.js',
-      'Lodash',
-      'Moment.js',
-    ],
-    tools: [
-      'Babel',
-      'Webpack',
-      'ESLint',
-      'Jest',
-      'Mocha',
-      'Chai',
-      'Selenium',
-      'Cypress',
-    ],
-    community: [
-      {
-        name: 'Stack Overflow',
-        type: 'forum',
+    //            ↙ cюди вводимо назву файлу з сontainer
+    res.render('js', {
+      layout: 'basic',
+      name: 'JavaScript',
+      description:
+        'JavaScript is a popular high-level, dynamic, and interpreted programming language.',
+      history: {
+        year: 1995,
+        founder: 'Brendan Eich',
       },
-      {
-        name: 'JavaScript Weekly',
-        type: 'newsletter',
+      types: [
+        'Number',
+        'String',
+        'Boolean',
+        'Null',
+        'Undefined',
+        'Symbol',
+        'Object',
+      ],
+      syntax: {
+        variables: ['var', 'let', 'const'],
+        functions: ['function'],
+        conditionals: ['if', 'else', 'switch'],
+        loops: ['for', 'while', 'do-while'],
+        classes: ['class'],
       },
-      {
-        name: 'The Changelog',
-        type: 'podcast',
-      },
-      {
-        name: 'CSS-Tricks',
-        type: 'blog',
-      },
-    ],
+      features: [
+        'First-class functions',
+        'Closures',
+        'Dynamic typing',
+        'Prototype-based inheritance',
+        'Asynchronous programming with Promises and async/await',
+        'Modules with import/export statements',
+      ],
+      libraries: [
+        'jQuery',
+        'React',
+        'Angular',
+        'Vue',
+        'Node.js',
+        'Express.js',
+        'Lodash',
+        'Moment.js',
+      ],
+      tools: [
+        'Babel',
+        'Webpack',
+        'ESLint',
+        'Jest',
+        'Mocha',
+        'Chai',
+        'Selenium',
+        'Cypress',
+      ],
+      community: [
+        {
+          name: 'Stack Overflow',
+          type: 'forum',
+        },
+        {
+          name: 'JavaScript Weekly',
+          type: 'newsletter',
+        },
+        {
+          name: 'The Changelog',
+          type: 'podcast',
+        },
+        {
+          name: 'CSS-Tricks',
+          type: 'blog',
+        },
+      ],
+    })
+    //                  ↑↑ сюди вводимо JSON дані
   })
-  //                  ↑↑ сюди вводимо JSON дані
 })
 
 // ================================================================
@@ -1598,6 +1601,7 @@ router.get('/list', function (req, res) {
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
+
 router.get('/shophome', function (req, res) {
   // res.render генерує нам HTML сторінку
 
@@ -1617,6 +1621,11 @@ router.get('/shophome', function (req, res) {
         {
           text: 'Help',
           href: 'https://www.youtube.com/',
+        },
+        {
+          text: 'Other',
+          href: 'https://www.google.com/',
+          isDisabled: true,
         },
       ],
     },
@@ -1805,6 +1814,7 @@ router.get('/shophome', function (req, res) {
         {
           text: 'Library',
           link: 'https://www.youtube.com/feed/library',
+          isDisabled: true,
         },
       ],
       [
@@ -1823,6 +1833,7 @@ router.get('/shophome', function (req, res) {
         {
           text: 'Settings',
           link: 'https://www.youtube.com/account',
+          isDisabled: true,
         },
       ],
       [
@@ -1841,6 +1852,7 @@ router.get('/shophome', function (req, res) {
         {
           text: 'Gaming',
           link: 'https://www.youtube.com/gaming',
+          isDisabled: true,
         },
       ],
       [
@@ -1859,6 +1871,7 @@ router.get('/shophome', function (req, res) {
         {
           text: 'Learning',
           link: 'https://www.youtube.com/learning',
+          isDisabled: true,
         },
       ],
       [
@@ -1877,6 +1890,7 @@ router.get('/shophome', function (req, res) {
         {
           text: 'About',
           link: 'https://www.youtube.com/about/',
+          isDisabled: true,
         },
       ],
     ],
@@ -1910,6 +1924,11 @@ router.get('/shopproduct', function (req, res) {
         {
           text: 'Help',
           href: 'https://www.youtube.com/',
+        },
+        {
+          text: 'Other',
+          href: 'https://www.youtube.com/',
+          isDisabled: true,
         },
       ],
     },
@@ -1994,7 +2013,6 @@ router.get('/shopproduct', function (req, res) {
         },
       ],
     },
-
     service: {
       title: 'Our Services',
       description:
@@ -2003,7 +2021,6 @@ router.get('/shopproduct', function (req, res) {
         {
           text: 'Show More',
           link: 'https://www.youtube.com/',
-          rel: 'show-more',
         },
       ],
     },
@@ -2025,6 +2042,7 @@ router.get('/shopproduct', function (req, res) {
         {
           text: 'Library',
           link: 'https://www.youtube.com/feed/library',
+          isDisabled: true,
         },
       ],
       [
@@ -2043,6 +2061,7 @@ router.get('/shopproduct', function (req, res) {
         {
           text: 'Settings',
           link: 'https://www.youtube.com/account',
+          isDisabled: true,
         },
       ],
       [
@@ -2061,6 +2080,7 @@ router.get('/shopproduct', function (req, res) {
         {
           text: 'Gaming',
           link: 'https://www.youtube.com/gaming',
+          isDisabled: true,
         },
       ],
       [
@@ -2079,6 +2099,7 @@ router.get('/shopproduct', function (req, res) {
         {
           text: 'Learning',
           link: 'https://www.youtube.com/learning',
+          isDisabled: true,
         },
       ],
       [
@@ -2097,6 +2118,7 @@ router.get('/shopproduct', function (req, res) {
         {
           text: 'About',
           link: 'https://www.youtube.com/about/',
+          isDisabled: true,
         },
       ],
     ],
@@ -2130,6 +2152,11 @@ router.get('/shopnews', function (req, res) {
         {
           text: 'Help',
           href: 'https://www.youtube.com/',
+        },
+        {
+          text: 'Other',
+          href: 'https://www.youtube.com/',
+          isDisabled: true,
         },
       ],
     },
@@ -2239,6 +2266,7 @@ router.get('/shopnews', function (req, res) {
         {
           text: 'Library',
           link: 'https://www.youtube.com/feed/library',
+          isDisabled: true,
         },
       ],
       [
@@ -2257,6 +2285,7 @@ router.get('/shopnews', function (req, res) {
         {
           text: 'Settings',
           link: 'https://www.youtube.com/account',
+          isDisabled: true,
         },
       ],
       [
@@ -2275,6 +2304,7 @@ router.get('/shopnews', function (req, res) {
         {
           text: 'Gaming',
           link: 'https://www.youtube.com/gaming',
+          isDisabled: true,
         },
       ],
       [
@@ -2293,6 +2323,7 @@ router.get('/shopnews', function (req, res) {
         {
           text: 'Learning',
           link: 'https://www.youtube.com/learning',
+          isDisabled: true,
         },
       ],
       [
@@ -2311,6 +2342,693 @@ router.get('/shopnews', function (req, res) {
         {
           text: 'About',
           link: 'https://www.youtube.com/about/',
+          isDisabled: true,
+        },
+      ],
+    ],
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+// ================================================================
+
+// ================================================================
+
+// router.get Створює нам один ентпоїнт
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/shoporder', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('shoporder', {
+    layout: 'shop',
+    navigation: {
+      links: [
+        {
+          text: 'Home',
+          href: 'https://github.com/',
+        },
+        {
+          text: 'Contacts',
+          href: 'https://www.google.com/',
+        },
+        {
+          text: 'Help',
+          href: 'https://www.youtube.com/',
+        },
+        {
+          text: 'Exit',
+          href: null,
+          isDisabled: true,
+        },
+      ],
+    },
+
+    header: 'Оформлення замовлення',
+    contacts_data: {
+      title: 'Контактні дані',
+
+      buttons: [
+        {
+          text: 'Я новий покупець',
+          isPrimary: true,
+        },
+        {
+          text: 'Я постійний покупець',
+          isOutline: true,
+        },
+      ],
+      form: {
+        input: {
+          surname: {
+            label: 'Прізвище',
+            placeholder: 'Іванов',
+            caption: 'Введіть прізвище',
+          },
+          name: {
+            label: 'Ім’я',
+            placeholder: 'Іван',
+            caption: 'Введіть Ім’я',
+          },
+          phone: {
+            label: 'Мобільний телефон',
+            placeholder: '+38 (XXX) XXX XX XX',
+            caption: 'Введіть телефон',
+          },
+          email: {
+            label: 'Пошта',
+            placeholder: 'ivanivanov@ukr.net',
+            caption: 'Введіть Пошту',
+          },
+        },
+        switch: [
+          {
+            text: 'Отримувати інформацію про новинки',
+            isActive: false,
+          },
+          {
+            text: 'Отримувати інформацію про знижки',
+            isActive: true,
+          },
+        ],
+      },
+    },
+    action_block: [
+      { text: 'Швидке замовлення', isSuccess: true },
+      { text: 'Видалити', isDanger: true },
+      { text: 'Детальніше', isInfo: true },
+    ],
+    total: {
+      title: 'Всього',
+      item_list: [
+        { name: 'Ноут', price: '25 000 ₴' },
+        { name: 'Мишка', price: '25 000 ₴' },
+        { name: 'Клава', price: '25 000 ₴' },
+      ],
+      additional_info: [
+        { text: 'Всього товарів', value: '75 000 ₴' },
+        { text: 'Купони', value: 'Немає' },
+        { text: 'Доставка', value: 'Безкоштовно' },
+      ],
+      total_price: {
+        text: 'Всього товарів',
+        value: '75 000 ₴',
+      },
+      button: [
+        {
+          text: 'Підтвердити замовлення',
+          isPrimary: true,
+        },
+        {
+          text: 'Відмінити купони',
+          isOutline: true,
+        },
+      ],
+    },
+    delivery: {
+      title: 'Доставка',
+      select: [
+        {
+          label: 'Місто доставки',
+          placeholder: 'Оберіть місто доставки',
+          options: [
+            { value: '1', text: 'Київ' },
+            { value: '2', text: 'Харків' },
+            { value: '3', text: 'Одеса' },
+            { value: '4', text: 'Львів' },
+            { value: '5', text: 'Дніпро' },
+            { value: '6', text: 'Донецьк' },
+          ],
+        },
+        {
+          label: 'Район доставки',
+          placeholder: 'Оберіть район доставки',
+          options: [
+            { value: '1', text: 'Голосіївський' },
+            { value: '2', text: 'Оболонський' },
+            { value: '3', text: 'Печерський' },
+            { value: '4', text: 'Дарницький' },
+            { value: '5', text: 'Деснянський' },
+            { value: '6', text: 'Подільський' },
+          ],
+        },
+      ],
+      delivery_type: [
+        {
+          type: 'Самовивіз з відділення Нової пошти',
+        },
+        {
+          type: 'Кур’єром Нової пошти',
+        },
+        {
+          type: 'Самовивіз з магазину',
+        },
+        {
+          type: 'Доставка закордон',
+        },
+      ],
+      payment: {
+        title: 'Оплата',
+        list: [
+          {
+            type: 'Оплата при отриманні',
+            description: 'За тарифами перевізника',
+          },
+          {
+            type: 'Оплатити зараз',
+          },
+        ],
+      },
+      contact: {
+        title: 'Контактні дані отримувача',
+        surname: {
+          label: 'Прізвище',
+          placeholder: 'Іванов',
+          caption: 'Введіть прізвище',
+        },
+        name: {
+          label: 'Ім’я',
+          placeholder: 'Іван',
+          caption: 'Введіть Ім’я',
+        },
+        phone: {
+          label: 'Мобільний телефон',
+          placeholder: '+38 (XXX) XXX XX XX',
+          caption: 'Введіть телефон',
+        },
+        email: {
+          label: 'Пошта',
+          placeholder: 'ivanivanov@ukr.net',
+          caption: 'Введіть Пошту',
+        },
+      },
+      coment: {
+        label: 'Коментар',
+        placeholder: 'Я хочу, щоб',
+      },
+    },
+    coupon: {
+      title: 'Купони',
+      select: {
+        availabel_coupon: {
+          label: 'Наявні купони',
+          placeholder: 'Виберіть купон',
+          options: [
+            { value: '1', text: 'SEEYALATER' },
+            { value: '2', text: 'HOTEL10' },
+            { value: '3', text: 'DOWNLOAD25' },
+          ],
+        },
+        friend_coupon: {
+          label: 'Купони за запрошених друзів',
+          placeholder: 'Виберіть купон',
+          options: [
+            { value: '1', text: 'TRAVEL5' },
+            { value: '2', text: '75VACA' },
+            { value: '3', text: '150VACA' },
+          ],
+        },
+      },
+      add: {
+        friend: {
+          label: 'Запросіть друзів та отримайте ще купонів',
+          placeholder:
+            'Введіть контактні дані друзів через ;',
+          caption:
+            'Напишіть електронні адреси/телефон друзів через “;”',
+        },
+        colleague: {
+          label: 'Запросити колег',
+          placeholder:
+            'Введіть контактні дані колег через ;',
+          caption:
+            'Напишіть електронні адреси/телефон колег через “;”',
+        },
+      },
+    },
+    quiz: {
+      title: 'Домоможи краще нам тебе зрозуміти',
+      preference: {
+        title:
+          'Який тип обладнання ви зацікавлені в придбанні?',
+        options: [
+          'Смартфони',
+          'Ноутбуки',
+          'Планшети',
+          'ПК',
+          'Телевізори',
+        ],
+      },
+      your_expirience: {
+        label: 'Який у Вас досвід користування ПК',
+      },
+      purchase_frequency: {
+        label: 'Як часто ви купуєте обладнання?',
+        placeholder: 'Оберіть варіант',
+        options: [
+          { value: '1', text: 'Раз в тиждень' },
+          { value: '2', text: 'Раз в місяць' },
+          { value: '3', text: 'Раз в рік' },
+        ],
+      },
+      factors: {
+        title:
+          'Які з наведених нижче факторів є для вас важливими при купівлі обладнання?',
+        options: [
+          'Ціна',
+          'Репутація бренду',
+          'Якість',
+          'Особливості',
+          'Гарантія',
+          'Доступність',
+          'Обслуговування клієнтів',
+        ],
+      },
+    },
+    footer: [
+      [
+        {
+          text: 'Home',
+          link: 'https://www.youtube.com/',
+        },
+        {
+          text: 'Trending',
+          link: 'https://www.youtube.com/feed/trending',
+        },
+        {
+          text: 'Subscriptions',
+          link: 'https://www.youtube.com/feed/subscriptions',
+        },
+        {
+          text: 'Library',
+          link: 'https://www.youtube.com/feed/library',
+          isDisabled: true,
+        },
+      ],
+      [
+        {
+          text: 'History',
+          link: 'https://www.youtube.com/feed/history',
+        },
+        {
+          text: 'Your Videos',
+          link: 'https://www.youtube.com/feed/my_videos',
+        },
+        {
+          text: 'Live',
+          link: 'https://www.youtube.com/live',
+        },
+        {
+          text: 'Settings',
+          link: 'https://www.youtube.com/account',
+          isDisabled: true,
+        },
+      ],
+      [
+        {
+          text: 'Watch Later',
+          link: 'https://www.youtube.com/playlist?list=WL',
+        },
+        {
+          text: 'Liked Videos',
+          link: 'https://www.youtube.com/playlist?list=LL',
+        },
+        {
+          text: 'Music',
+          link: 'https://www.youtube.com/music',
+        },
+        {
+          text: 'Gaming',
+          link: 'https://www.youtube.com/gaming',
+          isDisabled: true,
+        },
+      ],
+      [
+        {
+          text: 'Sports',
+          link: 'https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg',
+        },
+        {
+          text: 'News',
+          link: 'https://www.youtube.com/news',
+        },
+        {
+          text: 'Fashion & Beauty',
+          link: 'https://www.youtube.com/channel/UC1x8rV_f-2yPpzlN0JWZXIQ',
+        },
+        {
+          text: 'Learning',
+          link: 'https://www.youtube.com/learning',
+          isDisabled: true,
+        },
+      ],
+      [
+        {
+          text: 'Report History',
+          link: 'https://www.youtube.com/feed/history/report_history',
+        },
+        {
+          text: 'Help',
+          link: 'https://support.google.com/youtube/?hl=en',
+        },
+        {
+          text: 'Send Feedback',
+          link: 'https://support.google.com/youtube/answer/4347644?hl=en',
+        },
+        {
+          text: 'About',
+          link: 'https://www.youtube.com/about/',
+          isDisabled: true,
+        },
+      ],
+    ],
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+// ================================================================
+// ================================================================
+
+// router.get Створює нам один ентпоїнт
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/shopprofile', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('shopprofile', {
+    layout: 'shop',
+    navigation: {
+      links: [
+        {
+          text: 'Home',
+          href: 'https://github.com/',
+        },
+        {
+          text: 'Contacts',
+          href: 'https://www.google.com/',
+        },
+        {
+          text: 'Help',
+          href: 'https://www.youtube.com/',
+        },
+        {
+          text: 'Other',
+          href: null,
+          isDisabled: true,
+        },
+      ],
+    },
+
+    header: 'Мої замовлення',
+
+    purchase: {
+      tabs: ['Всі замовлення', 'Гарантія та повернення'],
+      actionBlock: {
+        input: { placeholder: 'Placeholder' },
+        buttons: [
+          {
+            text: 'Знайти',
+            link: 'https://www.youtube.com/',
+            isSuccess: true,
+          },
+          {
+            text: 'Виділити все',
+            link: 'https://www.youtube.com/',
+            isOutline: true,
+          },
+          {
+            text: 'Очистити все',
+            link: 'https://www.youtube.com/',
+            isDanger: true,
+          },
+        ],
+      },
+      itemList: [
+        {
+          number: '№12587463 від 01.01.2023',
+          status: 'Виконано',
+          amount: { title: 'Сума', value: '25 000 ₴' },
+          images: ['https://picsum.photos/110/100'],
+          button: {
+            text: 'Детальніше',
+            link: 'https://www.youtube.com/',
+            isPrimary: true,
+          },
+        },
+        {
+          number: '№12587463 від 01.01.2023',
+          status: 'Виконано',
+          amount: { title: 'Сума', value: '25 000 ₴' },
+          images: [
+            'https://picsum.photos/110/100',
+            'https://picsum.photos/110/100',
+            'https://picsum.photos/110/100',
+          ],
+          button: {
+            text: 'Детальніше',
+            link: 'https://www.youtube.com/',
+            isPrimary: true,
+          },
+        },
+        {
+          number: '№12587463 від 01.01.2023',
+          status: 'Виконано',
+          amount: { title: 'Сума', value: '25 000 ₴' },
+          images: [
+            'https://picsum.photos/110/100',
+            'https://picsum.photos/110/100',
+          ],
+          button: {
+            text: 'Детальніше',
+            link: 'https://www.youtube.com/',
+            isPrimary: true,
+          },
+        },
+      ],
+    },
+    userInfo: {
+      title: 'Особиста інформація',
+      profileData: {
+        title: 'Особисті дані',
+        fullName: {
+          surname: {
+            title: 'Прізвище',
+            value: 'Іванов',
+          },
+          name: {
+            title: 'Ім’я',
+            value: 'Іван',
+          },
+          middleName: {
+            title: 'По-батькові',
+            value: 'Іванович',
+          },
+        },
+        otherInfo: {
+          birthday: {
+            title: 'Дата народження',
+            value: '01.01.2000',
+          },
+          sex: {
+            title: 'Стать',
+            value: 'Чоловіча',
+          },
+          language: {
+            title: 'Мова',
+            value: 'Українська',
+          },
+        },
+      },
+      buttons: [
+        {
+          text: 'Редагувати',
+          link: 'https://www.youtube.com/',
+          isPrimary: true,
+        },
+        {
+          text: 'Очистити',
+          link: 'https://www.youtube.com/',
+          isSecondary: true,
+        },
+        {
+          text: 'Видалити',
+          link: 'https://www.youtube.com/',
+          isDanger: true,
+        },
+      ],
+      recipients: {
+        title: 'Отримувачі',
+        users: [
+          {
+            name: 'Іванов Іван Іванович',
+            phone: '+38 (098) 222 22 22',
+            button: {
+              text: 'Редагувати',
+              link: 'https://www.youtube.com/',
+            },
+          },
+          {
+            name: 'Петров Петро Петрович',
+            phone: '+38 (098) 111 11 11',
+            button: {
+              text: 'Редагувати',
+              link: 'https://www.youtube.com/',
+            },
+          },
+        ],
+      },
+      contacts: {
+        title: 'Контакти',
+        contactData: {
+          phone: {
+            title: 'Номер телефону',
+            value: '+38 (098) 222 22 22',
+          },
+          additionalPhone: {
+            title: 'Додатковий номер телефону',
+            value: '+38 (098) 111 11 11',
+          },
+          email: {
+            title: 'Електронна адреса',
+            value: 'ivanivanov@ukr.net',
+          },
+        },
+        buttons: [
+          {
+            text: 'Редагувати',
+            link: 'https://www.youtube.com/',
+            isPrimary: true,
+          },
+          {
+            text: 'Очистити',
+            link: 'https://www.youtube.com/',
+            isSecondary: true,
+          },
+          {
+            text: 'Видалити',
+            link: 'https://www.youtube.com/',
+            isDanger: true,
+          },
+        ],
+      },
+    },
+
+    footer: [
+      [
+        {
+          text: 'Home',
+          link: 'https://www.youtube.com/',
+        },
+        {
+          text: 'Trending',
+          link: 'https://www.youtube.com/feed/trending',
+        },
+        {
+          text: 'Subscriptions',
+          link: 'https://www.youtube.com/feed/subscriptions',
+        },
+        {
+          text: 'Library',
+          link: 'https://www.youtube.com/feed/library',
+          isDisabled: true,
+        },
+      ],
+      [
+        {
+          text: 'History',
+          link: 'https://www.youtube.com/feed/history',
+        },
+        {
+          text: 'Your Videos',
+          link: 'https://www.youtube.com/feed/my_videos',
+        },
+        {
+          text: 'Live',
+          link: 'https://www.youtube.com/live',
+        },
+        {
+          text: 'Settings',
+          link: 'https://www.youtube.com/account',
+          isDisabled: true,
+        },
+      ],
+      [
+        {
+          text: 'Watch Later',
+          link: 'https://www.youtube.com/playlist?list=WL',
+        },
+        {
+          text: 'Liked Videos',
+          link: 'https://www.youtube.com/playlist?list=LL',
+        },
+        {
+          text: 'Music',
+          link: 'https://www.youtube.com/music',
+        },
+        {
+          text: 'Gaming',
+          link: 'https://www.youtube.com/gaming',
+          isDisabled: true,
+        },
+      ],
+      [
+        {
+          text: 'Sports',
+          link: 'https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg',
+        },
+        {
+          text: 'News',
+          link: 'https://www.youtube.com/news',
+        },
+        {
+          text: 'Fashion & Beauty',
+          link: 'https://www.youtube.com/channel/UC1x8rV_f-2yPpzlN0JWZXIQ',
+        },
+        {
+          text: 'Learning',
+          link: 'https://www.youtube.com/learning',
+          isDisabled: true,
+        },
+      ],
+      [
+        {
+          text: 'Report History',
+          link: 'https://www.youtube.com/feed/history/report_history',
+        },
+        {
+          text: 'Help',
+          link: 'https://support.google.com/youtube/?hl=en',
+        },
+        {
+          text: 'Send Feedback',
+          link: 'https://support.google.com/youtube/answer/4347644?hl=en',
+        },
+        {
+          text: 'About',
+          link: 'https://www.youtube.com/about/',
+          isDisabled: true,
         },
       ],
     ],
