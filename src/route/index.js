@@ -681,40 +681,41 @@ router.get("/facebook", function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
+
   res.render("facebook", {
     layout: "basic",
-    name: "Facebook",
+    name: 'Facebook',
     users: [
       {
         id: 1,
-        name: "John Doe",
-        gender: "Male",
+        name: 'John Doe',
+        gender: 'Male',
         age: 30,
         friends: [
           {
             id: 2,
-            name: "Jane Smith",
-            gender: "Female",
+            name: 'Jane Smith',
+            gender: 'Female',
             age: 27,
             mutual_friends: [
               {
                 id: 4,
-                name: "Samantha Lee",
-                gender: "Female",
+                name: 'Samantha Lee',
+                gender: 'Female',
                 age: 25,
               },
             ],
           },
           {
             id: 5,
-            name: "Mike Williams",
-            gender: "Male",
+            name: 'Mike Williams',
+            gender: 'Male',
             age: 28,
             mutual_friends: [
               {
                 id: 7,
-                name: "David Kim",
-                gender: "Male",
+                name: 'David Kim',
+                gender: 'Male',
                 age: 29,
               },
             ],
@@ -723,34 +724,34 @@ router.get("/facebook", function (req, res) {
         groups: [
           {
             id: 1,
-            name: "Hiking Enthusiasts",
+            name: 'Hiking Enthusiasts',
             description:
-              "A group for people who love hiking and the great outdoors",
+              'A group for people who love hiking and the great outdoors',
             members: [
               {
                 id: 8,
-                name: "Sarah Johnson",
-                gender: "Female",
+                name: 'Sarah Johnson',
+                gender: 'Female',
                 age: 25,
               },
             ],
           },
           {
             id: 2,
-            name: "Foodies United",
+            name: 'Foodies United',
             description:
-              "A group for food lovers to share recipes and restaurant recommendations",
+              'A group for food lovers to share recipes and restaurant recommendations',
             members: [
               {
                 id: 5,
-                name: "Mike Williams",
-                gender: "Male",
+                name: 'Mike Williams',
+                gender: 'Male',
                 age: 28,
               },
               {
                 id: 8,
-                name: "Sarah Johnson",
-                gender: "Female",
+                name: 'Sarah Johnson',
+                gender: 'Female',
                 age: 25,
               },
             ],
@@ -759,32 +760,32 @@ router.get("/facebook", function (req, res) {
       },
       {
         id: 16,
-        name: "Amy Lee",
-        gender: "Female",
+        name: 'Amy Lee',
+        gender: 'Female',
         age: 30,
         friends: [
           {
             id: 15,
-            name: "Peter Kim",
-            gender: "Male",
+            name: 'Peter Kim',
+            gender: 'Male',
             age: 32,
             mutual_friends: [
               {
                 id: 17,
-                name: "David Chen",
-                gender: "Male",
+                name: 'David Chen',
+                gender: 'Male',
                 age: 33,
               },
               {
                 id: 19,
-                name: "Erica Wong",
-                gender: "Female",
+                name: 'Erica Wong',
+                gender: 'Female',
                 age: 29,
                 mutual_friends: [
                   {
                     id: 20,
-                    name: "Alex Lee",
-                    gender: "Male",
+                    name: 'Alex Lee',
+                    gender: 'Male',
                     age: 31,
                   },
                 ],
@@ -793,33 +794,34 @@ router.get("/facebook", function (req, res) {
             groups: [
               {
                 id: 3,
-                name: "Travel Addicts",
+                name: 'Travel Addicts',
                 description:
-                  "A group for people who love to travel and explore new places",
+                  'A group for people who love to travel and explore new places',
                 members: [
                   {
                     id: 22,
-                    name: "Jackie Chen",
-                    gender: "Female",
+                    name: 'Jackie Chen',
+                    gender: 'Female',
                     age: 26,
                   },
                 ],
               },
               {
                 id: 4,
-                name: "Pet Lovers",
-                description: "A group for people who love their furry friends",
+                name: 'Pet Lovers',
+                description:
+                  'A group for people who love their furry friends',
                 members: [
                   {
                     id: 16,
-                    name: "Amy Lee",
-                    gender: "Female",
+                    name: 'Amy Lee',
+                    gender: 'Female',
                     age: 30,
                   },
                   {
                     id: 25,
-                    name: "John Smith",
-                    gender: "Male",
+                    name: 'John Smith',
+                    gender: 'Male',
                     age: 33,
                   },
                 ],
@@ -829,9 +831,10 @@ router.get("/facebook", function (req, res) {
         ],
       },
     ],
-  });
+  })
   //                  ↑↑ сюди вводимо JSON дані
-});
+})
+
 
 // ================================================================
 // ================================================================
@@ -908,22 +911,22 @@ router.get("/mac", function (req, res) {
       operating_system: "macOS",
       accessories: [
         {
-          name: "Apple Magic Keyboard",
+          name: 'Apple Magic Keyboard',
           price: 99.99,
         },
         {
-          name: "Apple Magic Mouse 2",
+          name: 'Apple Magic Mouse 2',
           price: 79.99,
         },
         {
-          name: "USB-C to USB Adapter",
+          name: 'USB-C to USB Adapter',
           price: 19.99,
         },
       ],
     },
-  });
+  })
   //                  ↑↑ сюди вводимо JSON дані
-});
+})
 
 // ================================================================
 
@@ -1023,13 +1026,17 @@ router.get("/car", function (req, res) {
       },
       total: 28990,
     },
-  });
+  })
   //                  ↑↑ сюди вводимо JSON дані
-});
+})
 
 // ================================================================
 
+
 router.get("/js", function (req, res) {
+
+router.get('/js', function (req, res) {
+
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
@@ -1095,18 +1102,21 @@ router.get("/js", function (req, res) {
         name: "JavaScript Weekly",
         type: "newsletter",
       },
-      {
-        name: "The Changelog",
-        type: "podcast",
+            {
+        name: 'The Changelog',
+        type: 'podcast',
       },
       {
-        name: "CSS-Tricks",
-        type: "blog",
+        name: 'CSS-Tricks',
+        type: 'blog',
       },
     ],
-  });
+  })
   //                  ↑↑ сюди вводимо JSON дані
-});
+})
+
+})
+
 
 // ================================================================
 
@@ -1157,19 +1167,19 @@ router.get("/task22", function (req, res) {
         },
       },
       agreement: {
-        title: "Terms of use",
+        title: 'Terms of use',
         info: {
-          sub_title: "Check out our requirements",
+          sub_title: 'Check out our requirements',
           detail: {
-            text: "By using or accessing the service, you agree to be bound by the terms and conditions outlined in the agreement.",
-            button: "Аccept",
+            text: 'By using or accessing the service, you agree to be bound by the terms and conditions outlined in the agreement.',
+            button: 'Аccept',
           },
         },
       },
     },
-  });
+  })
   //                  ↑↑ сюди вводимо JSON дані
-});
+})
 
 // ================================================================
 
@@ -1250,20 +1260,20 @@ router.get("/task21", function (req, res) {
         text: "Open link page",
         url: "https://google.com",
       },
-      list_name: [
+       list_name: [
         {
-          text: "Github",
-          url: "https://github.com/",
+          text: 'Github',
+          url: 'https://github.com/',
         },
         {
-          text: "Bootstrap",
-          url: "https://getbootstrap.com/",
+          text: 'Bootstrap',
+          url: 'https://getbootstrap.com/',
         },
       ],
     },
-  });
+  })
   //                  ↑↑ сюди вводимо JSON дані
-});
+})
 
 // ================================================================
 // ================================================================
@@ -1504,22 +1514,22 @@ router.get("/task31", function (req, res) {
       ],
       partners: [
         {
-          name: "Acme Inc.",
-          link: "https://www.acme.com/",
+          name: 'Acme Inc.',
+          link: 'https://www.acme.com/',
         },
         {
-          name: "Globex Corporation",
-          link: "https://www.globex.com/",
+          name: 'Globex Corporation',
+          link: 'https://www.globex.com/',
         },
         {
-          name: "Stark Industries",
-          link: "https://www.starkindustries.com/",
+          name: 'Stark Industries',
+          link: 'https://www.starkindustries.com/',
         },
       ],
     },
-  });
+  })
   //                  ↑↑ сюди вводимо JSON дані
-});
+})
 
 // ================================================================
 // ================================================================
@@ -1565,25 +1575,26 @@ router.get("/list", function (req, res) {
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
-router.get("/shophome", function (req, res) {
+
+router.get('/shophome', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render("shophome", {
-    layout: "shop",
+  res.render('shophome', {
+    layout: 'shop',
     navigation: {
       links: [
         {
-          text: "Home",
-          href: "https://github.com/",
+          text: 'Home',
+          href: 'https://github.com/',
         },
         {
-          text: "Contacts",
-          href: "https://www.google.com/",
+          text: 'Contacts',
+          href: 'https://www.google.com/',
         },
         {
-          text: "Help",
-          href: "https://www.youtube.com/",
+          text: 'Help',
+          href: 'https://www.youtube.com/',
         },
         {
           text: "Other",
@@ -1852,9 +1863,9 @@ router.get("/shophome", function (req, res) {
         },
       ],
     ],
-  });
+  })
   //                  ↑↑ сюди вводимо JSON дані
-});
+})
 
 // ================================================================
 
@@ -1971,16 +1982,14 @@ router.get("/shopproduct", function (req, res) {
         },
       ],
     },
-
     service: {
-      title: "Our Services",
+      title: 'Our Services',
       description:
-        "We offer a variety of services to meet your needs, including web design, content creation, and social media management.",
+        'We offer a variety of services to meet your needs, including web design, content creation, and social media management.',
       buttons: [
         {
-          text: "Show More",
-          link: "https://www.youtube.com/",
-          rel: "show-more",
+          text: 'Show More',
+          link: 'https://www.youtube.com/',
         },
       ],
     },
@@ -1988,103 +1997,103 @@ router.get("/shopproduct", function (req, res) {
     footer: [
       [
         {
-          text: "Home",
-          link: "https://www.youtube.com/",
+          text: 'Home',
+          link: 'https://www.youtube.com/',
         },
         {
-          text: "Trending",
-          link: "https://www.youtube.com/feed/trending",
+          text: 'Trending',
+          link: 'https://www.youtube.com/feed/trending',
         },
         {
-          text: "Subscriptions",
-          link: "https://www.youtube.com/feed/subscriptions",
+          text: 'Subscriptions',
+          link: 'https://www.youtube.com/feed/subscriptions',
         },
         {
-          text: "Library",
-          link: "https://www.youtube.com/feed/library",
+          text: 'Library',
+          link: 'https://www.youtube.com/feed/library',
           isDisabled: true,
         },
       ],
       [
         {
-          text: "History",
-          link: "https://www.youtube.com/feed/history",
+          text: 'History',
+          link: 'https://www.youtube.com/feed/history',
         },
         {
-          text: "Your Videos",
-          link: "https://www.youtube.com/feed/my_videos",
+          text: 'Your Videos',
+          link: 'https://www.youtube.com/feed/my_videos',
         },
         {
-          text: "Live",
-          link: "https://www.youtube.com/live",
+          text: 'Live',
+          link: 'https://www.youtube.com/live',
         },
         {
-          text: "Settings",
-          link: "https://www.youtube.com/account",
+          text: 'Settings',
+          link: 'https://www.youtube.com/account',
           isDisabled: true,
         },
       ],
       [
         {
-          text: "Watch Later",
-          link: "https://www.youtube.com/playlist?list=WL",
+          text: 'Watch Later',
+          link: 'https://www.youtube.com/playlist?list=WL',
         },
         {
-          text: "Liked Videos",
-          link: "https://www.youtube.com/playlist?list=LL",
+          text: 'Liked Videos',
+          link: 'https://www.youtube.com/playlist?list=LL',
         },
         {
-          text: "Music",
-          link: "https://www.youtube.com/music",
+          text: 'Music',
+          link: 'https://www.youtube.com/music',
         },
         {
-          text: "Gaming",
-          link: "https://www.youtube.com/gaming",
+          text: 'Gaming',
+          link: 'https://www.youtube.com/gaming',
           isDisabled: true,
         },
       ],
       [
         {
-          text: "Sports",
-          link: "https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg",
+          text: 'Sports',
+          link: 'https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg',
         },
         {
-          text: "News",
-          link: "https://www.youtube.com/news",
+          text: 'News',
+          link: 'https://www.youtube.com/news',
         },
         {
-          text: "Fashion & Beauty",
-          link: "https://www.youtube.com/channel/UC1x8rV_f-2yPpzlN0JWZXIQ",
+          text: 'Fashion & Beauty',
+          link: 'https://www.youtube.com/channel/UC1x8rV_f-2yPpzlN0JWZXIQ',
         },
         {
-          text: "Learning",
-          link: "https://www.youtube.com/learning",
+          text: 'Learning',
+          link: 'https://www.youtube.com/learning',
           isDisabled: true,
         },
       ],
       [
         {
-          text: "Report History",
-          link: "https://www.youtube.com/feed/history/report_history",
+          text: 'Report History',
+          link: 'https://www.youtube.com/feed/history/report_history',
         },
         {
-          text: "Help",
-          link: "https://support.google.com/youtube/?hl=en",
+          text: 'Help',
+          link: 'https://support.google.com/youtube/?hl=en',
         },
         {
-          text: "Send Feedback",
-          link: "https://support.google.com/youtube/answer/4347644?hl=en",
+          text: 'Send Feedback',
+          link: 'https://support.google.com/youtube/answer/4347644?hl=en',
         },
         {
-          text: "About",
-          link: "https://www.youtube.com/about/",
+          text: 'About',
+          link: 'https://www.youtube.com/about/',
           isDisabled: true,
         },
       ],
     ],
-  });
+  })
   //                  ↑↑ сюди вводимо JSON дані
-});
+})
 
 // ================================================================
 
@@ -2304,9 +2313,9 @@ router.get("/shopnews", function (req, res) {
         },
       ],
     ],
-  });
+  })
   //                  ↑↑ сюди вводимо JSON дані
-});
+})
 
 // ================================================================
 
@@ -2670,9 +2679,9 @@ router.get("/shoporder", function (req, res) {
         },
       ],
     ],
-  });
+  })
   //                  ↑↑ сюди вводимо JSON дані
-});
+})
 
 // ================================================================
 
