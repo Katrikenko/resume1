@@ -708,7 +708,6 @@ router.get('/facebook', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-
   res.render('facebook', {
     layout: 'basic',
     name: 'Facebook',
@@ -1138,7 +1137,6 @@ router.get('/js', function (req, res) {
     //                  ↑↑ сюди вводимо JSON дані
   })
 })
-
 // ================================================================
 
 // router.get Створює нам один ентпоїнт
@@ -1621,11 +1619,6 @@ router.get('/shophome', function (req, res) {
         {
           text: 'Help',
           href: 'https://www.youtube.com/',
-        },
-        {
-          text: 'Other',
-          href: 'https://www.google.com/',
-          isDisabled: true,
         },
       ],
     },
