@@ -1,0 +1,47 @@
+<main>
+    <div class="row">
+        <div class="col-12">
+            {{#with header}}
+            <h1>{{title}}</h1>
+            {{#with button}}
+            <a class="btn btn-outline-secondary" href="{{link}}">{{text}}</a>
+            {{/with}}
+            {{/with}}
+            <hr>
+            {{#each goodsBlock}}
+            {{> cartGoodsItem}}
+            {{/each}}
+            <hr>
+            {{#with total}}
+            <h3>{{title}}</h3>
+            <h2>{{amount}}</h2>
+            <p>{{delivery}}</p>
+            {{#each buttons}}
+            {{#if isSuccess}}
+            <button class="btn btn-success">{{text}}</button>
+            {{/if}}
+            {{#if isOutline}}
+            <button class="btn btn-outline-success">{{text}}</button>
+            {{/if}}
+            {{/each}}
+            {{/with}}
+            <hr>
+            {{#with goodsOtherBlock}}
+            {{> shopcard}}
+            {{/with}}
+            <hr>
+            {{#with subscribe}}
+            <div class="card text-bg-dark">
+                <div class="card-body">
+                    <h2 class="card-title">{{header}}</h2>
+                    <p>{{description}}</p>
+                    {{#each buttons}}
+                    <a class="btn btn-primary" href="{{link}}">{{text}}</a>
+                    {{/each}}
+                </div>
+            </div>
+
+            {{/with}}
+        </div>
+    </div>
+</main>
