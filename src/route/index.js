@@ -1,70 +1,70 @@
 // Підключаємо технологію express для back-end сервера
-const express = require("express");
+const express = require('express')
 // Cтворюємо роутер - місце, куди ми підключаємо ендпоїнти
-const router = express.Router();
+const router = express.Router()
 
 // ================================================================
 
 var header = {
   name: {
-    firstname: "Dmytro",
-    lastname: "Melnyk",
+    firstname: 'Dmytro',
+    lastname: 'Melnyk',
   },
 
-  position: "Junior Fullstack JS Developer",
+  position: 'Junior Fullstack JS Developer',
 
-  salary: "600$/month",
+  salary: '600$/month',
 
-  address: "Maenza (LT), Lazio, Italy",
-};
+  address: 'Maenza (LT), Lazio, Italy',
+}
 
 var footer = {
   social: {
     email: {
-      text: "dmytro@mail.com",
-      href: "mailto:dmytro@mail.com",
+      text: 'dmytro@mail.com',
+      href: 'mailto:dmytro@mail.com',
     },
     phone: {
-      text: "+380670000123",
-      href: "tel:+380670000123",
+      text: '+380670000123',
+      href: 'tel:+380670000123',
     },
     linkedin: {
-      text: "LinkedIn",
-      href: "https://www.linkedin.com/in/dmytro-test",
+      text: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/dmytro-test',
     },
   },
-};
+}
 
 // ================================================================
 
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
-router.get("/", function (req, res) {
+router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render("index", {});
+  res.render('index', {})
   //                  ↑↑ сюди вводимо JSON дані
-});
+})
 
 // ================================================================
 
 //              ↙ тут вводимо шлях (PATH) до сторінки
-router.get("/summary", function (req, res) {
+router.get('/summary', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
-  res.render("summary", {
+  res.render('summary', {
     // ↙ сюди вводимо JSON дані
 
     page: {
-      title: "Resume | Summary",
+      title: 'Resume | Summary',
     },
 
     header,
 
     main: {
       summary: {
-        title: "Summary",
+        title: 'Summary',
         text: `Open-minded for new technologies, with 1 years of
 			experience in development. Whenever I start to
 			work on a new project I learn the domain and try
@@ -73,7 +73,7 @@ router.get("/summary", function (req, res) {
       },
 
       experience: {
-        title: "Other experience",
+        title: 'Other experience',
         text: `Pet project for parsing sport betting data from
 			different platforms ( odds ) and sport statistics
 			( tournament position, goals etc), analyzing by
@@ -84,19 +84,19 @@ router.get("/summary", function (req, res) {
     },
 
     footer,
-  });
-});
+  })
+})
 
 // ================================================================
 
 //              ↙ тут вводимо шлях (PATH) до сторінки
-router.get("/skills", function (req, res) {
+router.get('/skills', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
-  res.render("skills", {
+  res.render('skills', {
     // ↙ сюди вводимо JSON дані
 
     page: {
-      title: "Resume | Skills",
+      title: 'Resume | Skills',
     },
 
     header,
@@ -104,58 +104,58 @@ router.get("/skills", function (req, res) {
     main: {
       skills: [
         {
-          name: "HTML & Handlebars",
+          name: 'HTML & Handlebars',
           point: 9,
           isTop: false,
         },
         {
-          name: "VS Code & NPM",
+          name: 'VS Code & NPM',
           point: 10,
           isTop: true,
         },
         {
-          name: "GIT & Terminal",
+          name: 'GIT & Terminal',
           point: 8,
         },
         {
-          name: "React.js",
+          name: 'React.js',
           point: 0,
         },
         {
-          name: "PHP",
+          name: 'PHP',
           point: null,
         },
       ],
 
       hobbies: [
         {
-          name: "Reading",
+          name: 'Reading',
           isMain: false,
         },
         {
-          name: "Guitar",
+          name: 'Guitar',
           isMain: true,
         },
         {
-          name: "Photography",
+          name: 'Photography',
           isMain: false,
         },
       ],
     },
 
     footer,
-  });
-});
+  })
+})
 // ================================================================
 
 //              ↙ тут вводимо шлях (PATH) до сторінки
-router.get("/education", function (req, res) {
+router.get('/education', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
-  res.render("education", {
+  res.render('education', {
     // ↙ сюди вводимо JSON дані
 
     page: {
-      title: "Resume | Education",
+      title: 'Resume | Education',
     },
 
     header,
@@ -163,7 +163,7 @@ router.get("/education", function (req, res) {
     main: {
       education: [
         {
-          name: "Secondary school of the I-III degrees No. 14",
+          name: 'Secondary school of the I-III degrees No. 14',
           isEnd: true,
         },
         {
@@ -179,35 +179,35 @@ router.get("/education", function (req, res) {
 
       certificates: [
         {
-          name: "First",
+          name: 'First',
           id: 5256,
         },
         {
-          name: "Second",
+          name: 'Second',
           id: 2984,
         },
         {
-          name: "Third",
+          name: 'Third',
           id: 9207,
         },
       ],
     },
 
     footer,
-  });
-});
+  })
+})
 // ================================================================
 
 //              ↙ тут вводимо шлях (PATH) до сторінки
-router.get("/work", function (req, res) {
+router.get('/work', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
-  res.render("work", {
+  res.render('work', {
     // ↙ сюди вводимо JSON дані
 
-    layout: "big",
+    layout: 'big',
 
     page: {
-      title: "Resume | Work",
+      title: 'Resume | Work',
     },
 
     header,
@@ -215,56 +215,56 @@ router.get("/work", function (req, res) {
     main: {
       works: [
         {
-          position: "Junior Fullstack Developer",
+          position: 'Junior Fullstack Developer',
           company: {
-            name: "IT Brains",
-            url: "https://it-brains.com.ua/study",
+            name: 'IT Brains',
+            url: 'https://it-brains.com.ua/study',
           },
           duration: {
-            from: "10.10.2022",
+            from: '10.10.2022',
             to: null,
           },
           projectAmount: 3,
 
           projects: [
             {
-              name: "Resume",
-              url: "https://resume.com.ua",
+              name: 'Resume',
+              url: 'https://resume.com.ua',
               about:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum possimus magni commodi accusantium ad ipsam!",
+                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum possimus magni commodi accusantium ad ipsam!',
               stackAmount: 3,
               stacks: [
                 {
-                  name: "React.js",
+                  name: 'React.js',
                 },
                 {
-                  name: "HTML/CSS",
+                  name: 'HTML/CSS',
                 },
                 {
-                  name: "Node.js",
+                  name: 'Node.js',
                 },
               ],
               awardAmount: 2,
               awards: [
                 {
-                  name: "Lorem ipsum dolor sit.",
+                  name: 'Lorem ipsum dolor sit.',
                 },
                 {
-                  name: "Lorem ipsum dolor sit amet consectetur.",
+                  name: 'Lorem ipsum dolor sit amet consectetur.',
                 },
               ],
             },
           ],
         },
         {
-          position: "Test",
+          position: 'Test',
           company: {
-            name: "Name of company",
+            name: 'Name of company',
             url: null,
           },
           duration: {
-            from: "23.04.1916",
-            to: "05.04.2229",
+            from: '23.04.1916',
+            to: '05.04.2229',
           },
           projectAmount: 0,
         },
@@ -272,85 +272,93 @@ router.get("/work", function (req, res) {
     },
 
     footer,
-  });
-});
+  })
+})
 
 // ================================================================
 // ================================================================
 
 //              ↙ тут вводимо шлях (PATH) до сторінки
-router.get("/person", function (req, res) {
+router.get('/person', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
-  res.render("person", {
-    layout: "basic",
+  res.render('person', {
+    layout: 'basic',
     person: {
-      name: "Emma Johnson",
+      name: 'Emma Johnson',
       age: 32,
-      gender: "Female",
+      gender: 'Female',
       address: {
-        street: "123 Main St",
-        city: "New York",
-        state: "NY",
-        zip: "10001",
-        country: "USA",
+        street: '123 Main St',
+        city: 'New York',
+        state: 'NY',
+        zip: '10001',
+        country: 'USA',
       },
       education: [
         {
-          degree: "Bachelor of Science",
-          major: "Computer Science",
-          university: "Massachusetts Institute of Technology",
+          degree: 'Bachelor of Science',
+          major: 'Computer Science',
+          university:
+            'Massachusetts Institute of Technology',
           graduationYear: 2012,
         },
       ],
       workExperience: [
         {
-          company: "Google",
-          title: "Software Engineer",
-          startDate: "2012-06-01",
-          endDate: "2016-12-31",
+          company: 'Google',
+          title: 'Software Engineer',
+          startDate: '2012-06-01',
+          endDate: '2016-12-31',
           responsibilities: [
-            "Developed new features for Google Maps",
-            "Worked on improving search algorithms",
+            'Developed new features for Google Maps',
+            'Worked on improving search algorithms',
           ],
           year_founded: 1990,
-          industry: "Technology",
+          industry: 'Technology',
           employees: [
             {
-              name: "John Smith",
-              position: "CEO",
-              department: "Executive",
+              name: 'John Smith',
+              position: 'CEO',
+              department: 'Executive',
               projects: [
                 {
-                  name: "Project Alpha",
-                  description: "Developing new software platform",
-                  status: "In Progress",
+                  name: 'Project Alpha',
+                  description:
+                    'Developing new software platform',
+                  status: 'In Progress',
                   teams: [
                     {
-                      team_name: "Awesome Team",
+                      team_name: 'Awesome Team',
                       team_leader: {
-                        name: "John Smith",
-                        title: "Team Leader",
-                        email: "john.smith@example.com",
+                        name: 'John Smith',
+                        title: 'Team Leader',
+                        email: 'john.smith@example.com',
                       },
                       team_members: [
                         {
-                          name: "Alice Johnson",
-                          title: "Software Engineer",
-                          email: "alice.johnson@example.com",
-                          skills: ["Java", "Python", "SQL"],
+                          name: 'Alice Johnson',
+                          title: 'Software Engineer',
+                          email:
+                            'alice.johnson@example.com',
+                          skills: ['Java', 'Python', 'SQL'],
                           projects: [
                             {
-                              name: "Project A",
-                              description: "Lorem ipsum dolor sit amet",
-                              technologies: ["Java", "Spring Framework"],
+                              name: 'Project A',
+                              description:
+                                'Lorem ipsum dolor sit amet',
+                              technologies: [
+                                'Java',
+                                'Spring Framework',
+                              ],
                               team_members: [
                                 {
-                                  name: "Bob Lee",
-                                  title: "Software Engineer",
+                                  name: 'Bob Lee',
+                                  title:
+                                    'Software Engineer',
                                 },
                                 {
-                                  name: "Cindy Chen",
-                                  title: "UI Designer",
+                                  name: 'Cindy Chen',
+                                  title: 'UI Designer',
                                 },
                               ],
                             },
@@ -366,88 +374,88 @@ router.get("/person", function (req, res) {
         },
       ],
     },
-  });
-});
+  })
+})
 
 // ================================================================
 // ================================================================
 
 // ================================================================
 
-router.get("/program", function (req, res) {
+router.get('/program', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
-  res.render("program", {
-    layout: "basic",
+  res.render('program', {
+    layout: 'basic',
     program: {
       excursion: {
-        name: "Cultural Tour",
+        name: 'Cultural Tour',
         location: {
-          city: "Paris",
-          country: "France",
+          city: 'Paris',
+          country: 'France',
         },
-        date: "2023-06-15",
+        date: '2023-06-15',
         program: [
           {
-            name: "Museum Visit",
-            type: "Art",
+            name: 'Museum Visit',
+            type: 'Art',
             duration: 3,
             details: {
               museum: {
-                name: "The Louvre",
+                name: 'The Louvre',
                 location: {
-                  address: "Rue de Rivoli",
-                  city: "Paris",
-                  country: "France",
+                  address: 'Rue de Rivoli',
+                  city: 'Paris',
+                  country: 'France',
                 },
                 exhibits: [
                   {
-                    name: "Mona Lisa",
-                    artist: "Leonardo da Vinci",
-                    description: "Iconic portrait painting",
+                    name: 'Mona Lisa',
+                    artist: 'Leonardo da Vinci',
+                    description: 'Iconic portrait painting',
                     audio_guide: true,
                   },
                   {
-                    name: "Winged Victory of Samothrace",
+                    name: 'Winged Victory of Samothrace',
                     artist: null,
                     description:
-                      "Ancient Greek statue of Nike, the goddess of victory",
+                      'Ancient Greek statue of Nike, the goddess of victory',
                     audio_guide: true,
                   },
                 ],
               },
               guide: {
-                name: "Francois",
-                language: "French",
+                name: 'Francois',
+                language: 'French',
                 rating: 4.8,
               },
             },
           },
           {
-            name: "Cultural Show",
-            type: "Music and Dance",
+            name: 'Cultural Show',
+            type: 'Music and Dance',
             duration: 2,
             details: {
               venue: {
-                name: "Moulin Rouge",
+                name: 'Moulin Rouge',
                 location: {
-                  address: "82 Boulevard de Clichy",
-                  city: "Paris",
-                  country: "France",
+                  address: '82 Boulevard de Clichy',
+                  city: 'Paris',
+                  country: 'France',
                 },
               },
               performers: [
                 {
-                  name: "Mireille Mathieu",
-                  type: "Chanson singer",
+                  name: 'Mireille Mathieu',
+                  type: 'Chanson singer',
                 },
                 {
                   name: "Ballet de l'Opéra National de Paris",
-                  type: "Classical ballet company",
+                  type: 'Classical ballet company',
                 },
               ],
               guide: {
-                name: "Sophie",
-                language: "English",
+                name: 'Sophie',
+                language: 'English',
                 rating: 4.6,
               },
             },
@@ -455,212 +463,231 @@ router.get("/program", function (req, res) {
         ],
       },
     },
-  });
-});
+  })
+})
 
 // ================================================================
 
 // ================================================================
 
 //              ↙ тут вводимо шлях (PATH) до сторінки
-router.get("/bio", function (req, res) {
+router.get('/bio', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
-  res.render("bio", {
-    layout: "basic",
-    name: "Albert Einstein",
-    birthdate: "March 14, 1879",
-    birthplace: "Ulm, Kingdom of Württemberg, German Empire",
-    deathdate: "April 18, 1955",
-    deathplace: "Princeton, New Jersey, United States",
-    nationality: "Swiss, German, American",
-    occupation: "Theoretical Physicist",
+  res.render('bio', {
+    layout: 'basic',
+    name: 'Albert Einstein',
+    birthdate: 'March 14, 1879',
+    birthplace:
+      'Ulm, Kingdom of Württemberg, German Empire',
+    deathdate: 'April 18, 1955',
+    deathplace: 'Princeton, New Jersey, United States',
+    nationality: 'Swiss, German, American',
+    occupation: 'Theoretical Physicist',
     known_for: [
-      "Theory of Relativity",
-      "E=mc²",
-      "Photoelectric Effect",
-      "Brownian Motion",
+      'Theory of Relativity',
+      'E=mc²',
+      'Photoelectric Effect',
+      'Brownian Motion',
     ],
     education: [
       {
-        degree: "Doctor of Philosophy",
-        field: "Physics",
-        institution: "University of Zurich",
+        degree: 'Doctor of Philosophy',
+        field: 'Physics',
+        institution: 'University of Zurich',
         year: 1905,
       },
     ],
     notable_publications: [
       {
-        title: "On the Electrodynamics of Moving Bodies",
+        title: 'On the Electrodynamics of Moving Bodies',
         year: 1905,
-        publisher: "Annalen der Physik",
+        publisher: 'Annalen der Physik',
       },
       {
-        title: "Does the Inertia of a Body Depend Upon Its Energy Content?",
+        title:
+          'Does the Inertia of a Body Depend Upon Its Energy Content?',
         year: 1905,
-        publisher: "Annalen der Physik",
+        publisher: 'Annalen der Physik',
       },
     ],
     partners: [
       {
-        name: "Mileva Marić",
-        relationship: "First wife",
-        years: "1903-1919",
+        name: 'Mileva Marić',
+        relationship: 'First wife',
+        years: '1903-1919',
       },
       {
-        name: "Elsa Einstein",
-        relationship: "Second wife, also Einstein's first cousin",
-        years: "1919-1936",
+        name: 'Elsa Einstein',
+        relationship:
+          "Second wife, also Einstein's first cousin",
+        years: '1919-1936',
       },
     ],
     awards: [
       {
-        title: "Nobel Prize in Physics",
+        title: 'Nobel Prize in Physics',
         year: 1921,
-        description: "Awarded for his explanation of the photoelectric effect",
+        description:
+          'Awarded for his explanation of the photoelectric effect',
       },
     ],
-    influences: ["Isaac Newton", "James Clerk Maxwell", "Hermann Minkowski"],
+    influences: [
+      'Isaac Newton',
+      'James Clerk Maxwell',
+      'Hermann Minkowski',
+    ],
     influenced: [
-      "Niels Bohr",
-      "Erwin Schrödinger",
-      "Werner Heisenberg",
-      "Richard Feynman",
+      'Niels Bohr',
+      'Erwin Schrödinger',
+      'Werner Heisenberg',
+      'Richard Feynman',
     ],
     quotes: [
-      "Imagination is more important than knowledge.",
-      "I have no special talent. I am only passionately curious.",
-      "The important thing is not to stop questioning.",
-      "The most beautiful thing we can experience is the mysterious. It is the source of all true art and all science.",
+      'Imagination is more important than knowledge.',
+      'I have no special talent. I am only passionately curious.',
+      'The important thing is not to stop questioning.',
+      'The most beautiful thing we can experience is the mysterious. It is the source of all true art and all science.',
     ],
     major_discoveries: [
       {
-        title: "Photoelectric Effect",
+        title: 'Photoelectric Effect',
         year: 1905,
         description:
-          "Einstein explained the photoelectric effect, where electrons are emitted from a metal surface when it is illuminated by light.",
+          'Einstein explained the photoelectric effect, where electrons are emitted from a metal surface when it is illuminated by light.',
       },
     ],
     contributions: {
-      title: "Inventions",
+      title: 'Inventions',
       description:
-        "Leonardo designed and invented a wide variety of machines and devices, including a helicopter, a diving suit, and a self-propelled cart. Many of his inventions were centuries ahead of their time.",
-      year: "Late 15th to early 16th century",
-      field: "Invention",
+        'Leonardo designed and invented a wide variety of machines and devices, including a helicopter, a diving suit, and a self-propelled cart. Many of his inventions were centuries ahead of their time.',
+      year: 'Late 15th to early 16th century',
+      field: 'Invention',
     },
-  });
-});
+  })
+})
 
 // ================================================================
 
 // ================================================================
 
-router.get("/web", function (req, res) {
+router.get('/web', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
-  res.render("web", {
-    layout: "basic",
+  res.render('web', {
+    layout: 'basic',
     web: {
       languages: [
         {
-          name: "HTML",
-          version: "HTML5",
+          name: 'HTML',
+          version: 'HTML5',
           description:
-            "Hypertext Markup Language is the standard markup language for creating web pages and web applications.",
+            'Hypertext Markup Language is the standard markup language for creating web pages and web applications.',
           elements: [
             {
-              name: "div",
+              name: 'div',
               description:
-                "Defines a division or a section in an HTML document.",
+                'Defines a division or a section in an HTML document.',
               attributes: [
                 {
-                  name: "id",
-                  description: "Specifies a unique id for an HTML element.",
+                  name: 'id',
+                  description:
+                    'Specifies a unique id for an HTML element.',
                 },
                 {
-                  name: "class",
+                  name: 'class',
                   description:
-                    "Specifies one or more class names for an HTML element.",
+                    'Specifies one or more class names for an HTML element.',
                 },
               ],
             },
             {
-              name: "p",
-              description: "Defines a paragraph in an HTML document.",
+              name: 'p',
+              description:
+                'Defines a paragraph in an HTML document.',
               attributes: [
                 {
-                  name: "id",
-                  description: "Specifies a unique id for an HTML element.",
+                  name: 'id',
+                  description:
+                    'Specifies a unique id for an HTML element.',
                 },
                 {
-                  name: "class",
+                  name: 'class',
                   description:
-                    "Specifies one or more class names for an HTML element.",
+                    'Specifies one or more class names for an HTML element.',
                 },
               ],
             },
           ],
         },
         {
-          name: "CSS",
-          version: "CSS3",
+          name: 'CSS',
+          version: 'CSS3',
           description:
-            "Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in HTML or XML.",
+            'Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in HTML or XML.',
           properties: [
             {
-              name: "color",
-              description: "Sets the color of the text.",
+              name: 'color',
+              description: 'Sets the color of the text.',
               values: [
                 {
-                  value: "red",
-                  description: "Sets the text color to red.",
+                  value: 'red',
+                  description:
+                    'Sets the text color to red.',
                 },
                 {
-                  value: "blue",
-                  description: "Sets the text color to blue.",
+                  value: 'blue',
+                  description:
+                    'Sets the text color to blue.',
                 },
               ],
             },
             {
-              name: "background-color",
-              description: "Sets the background color of an element.",
+              name: 'background-color',
+              description:
+                'Sets the background color of an element.',
               values: [
                 {
-                  value: "white",
-                  description: "Sets the background color to white.",
+                  value: 'white',
+                  description:
+                    'Sets the background color to white.',
                 },
                 {
-                  value: "black",
-                  description: "Sets the background color to black.",
+                  value: 'black',
+                  description:
+                    'Sets the background color to black.',
                 },
               ],
             },
           ],
         },
         {
-          name: "JavaScript",
-          version: "ES6",
+          name: 'JavaScript',
+          version: 'ES6',
           description:
-            "JavaScript is a programming language used to create interactive effects within web browsers.",
+            'JavaScript is a programming language used to create interactive effects within web browsers.',
           functions: [
             {
-              name: "alert()",
+              name: 'alert()',
               description:
-                "Displays an alert box with a specified message and an OK button.",
+                'Displays an alert box with a specified message and an OK button.',
               parameters: [
                 {
-                  name: "message",
-                  type: "string",
-                  description: "The message to display in the alert box.",
+                  name: 'message',
+                  type: 'string',
+                  description:
+                    'The message to display in the alert box.',
                 },
               ],
             },
             {
-              name: "getElementById()",
-              description: "Returns the element with the specified ID.",
+              name: 'getElementById()',
+              description:
+                'Returns the element with the specified ID.',
               parameters: [
                 {
-                  name: "id",
-                  type: "string",
-                  description: "The ID of the element to find.",
+                  name: 'id',
+                  type: 'string',
+                  description:
+                    'The ID of the element to find.',
                 },
               ],
             },
@@ -668,8 +695,8 @@ router.get("/web", function (req, res) {
         },
       ],
     },
-  });
-});
+  })
+})
 
 // ================================================================
 
@@ -677,13 +704,12 @@ router.get("/web", function (req, res) {
 
 // router.get Створює нам один ентпоїнт
 
-router.get("/facebook", function (req, res) {
+router.get('/facebook', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-
-  res.render("facebook", {
-    layout: "basic",
+  res.render('facebook', {
+    layout: 'basic',
     name: 'Facebook',
     users: [
       {
@@ -835,80 +861,79 @@ router.get("/facebook", function (req, res) {
   //                  ↑↑ сюди вводимо JSON дані
 })
 
-
 // ================================================================
 // ================================================================
 
 // router.get Створює нам один ентпоїнт
 
-router.get("/mac", function (req, res) {
+router.get('/mac', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render("mac", {
-    layout: "basic",
-    name: "Apple MacBook Pro",
-    description: "The ultimate notebook for power users",
+  res.render('mac', {
+    layout: 'basic',
+    name: 'Apple MacBook Pro',
+    description: 'The ultimate notebook for power users',
     price: 1999.99,
-    category: "Computers & Tablets",
+    category: 'Computers & Tablets',
     features: {
       processor: {
-        brand: "Intel",
-        model: "Core i9",
-        speed: "2.3 GHz",
+        brand: 'Intel',
+        model: 'Core i9',
+        speed: '2.3 GHz',
         cores: 8,
-        cache: "16 MB",
+        cache: '16 MB',
       },
       memory: {
-        type: "DDR4",
-        size: "32 GB",
-        speed: "2666 MHz",
+        type: 'DDR4',
+        size: '32 GB',
+        speed: '2666 MHz',
       },
       storage: {
-        type: "SSD",
-        size: "1 TB",
+        type: 'SSD',
+        size: '1 TB',
       },
       display: {
-        size: "16 inches",
-        resolution: "3072x1920",
-        technology: "Retina",
-        color_space: "P3",
-        brightness: "500 nits",
-        refresh_rate: "60 Hz",
+        size: '16 inches',
+        resolution: '3072x1920',
+        technology: 'Retina',
+        color_space: 'P3',
+        brightness: '500 nits',
+        refresh_rate: '60 Hz',
       },
       graphics: {
-        brand: "AMD",
-        model: "Radeon Pro 5500M",
-        memory: "4 GB GDDR6",
+        brand: 'AMD',
+        model: 'Radeon Pro 5500M',
+        memory: '4 GB GDDR6',
       },
       ports: [
         {
-          type: "Thunderbolt 3",
+          type: 'Thunderbolt 3',
           count: 4,
           features: [
-            "Charging",
-            "DisplayPort",
-            "Thunderbolt (up to 40 Gbps)",
-            "USB 3.1 Gen 2 (up to 10 Gbps)",
+            'Charging',
+            'DisplayPort',
+            'Thunderbolt (up to 40 Gbps)',
+            'USB 3.1 Gen 2 (up to 10 Gbps)',
           ],
         },
         {
-          type: "HDMI",
+          type: 'HDMI',
           count: 1,
         },
       ],
       battery: {
-        type: "Lithium Polymer",
-        capacity: "100 Wh",
-        life: "Up to 11 hours",
+        type: 'Lithium Polymer',
+        capacity: '100 Wh',
+        life: 'Up to 11 hours',
       },
-      weight: "4.3 pounds",
+      weight: '4.3 pounds',
       dimensions: {
-        height: "0.64 inch",
-        width: "14.09 inches",
-        depth: "9.68 inches",
+        height: '0.64 inch',
+        width: '14.09 inches',
+        depth: '9.68 inches',
       },
-      operating_system: "macOS",
+      operating_system: 'macOS',
       accessories: [
         {
           name: 'Apple Magic Keyboard',
@@ -932,36 +957,36 @@ router.get("/mac", function (req, res) {
 
 // router.get Створює нам один ентпоїнт
 
-router.get("/car", function (req, res) {
+router.get('/car', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render("car", {
-    layout: "basic",
-    make: "Toyota",
-    model: "Camry",
+  res.render('car', {
+    layout: 'basic',
+    make: 'Toyota',
+    model: 'Camry',
     year: 2022,
-    color: "silver",
+    color: 'silver',
     features: {
       interior: {
         seats: {
-          material: "leather",
-          color: "black",
+          material: 'leather',
+          color: 'black',
           heated: true,
           ventilated: true,
         },
         dashboard: {
-          material: "plastic",
-          color: "black",
+          material: 'plastic',
+          color: 'black',
           display: {
-            type: "LCD",
+            type: 'LCD',
             size: 10.1,
-            resolution: "1280x720",
+            resolution: '1280x720',
             touchscreen: true,
           },
         },
         audio: {
-          system: "JBL",
+          system: 'JBL',
           speakers: 8,
           subwoofer: true,
           bluetooth: true,
@@ -971,17 +996,17 @@ router.get("/car", function (req, res) {
       exterior: {
         wheels: {
           size: 18,
-          type: "alloy",
-          color: "silver",
+          type: 'alloy',
+          color: 'silver',
         },
         headlights: {
-          type: "LED",
-          brightness: "high",
+          type: 'LED',
+          brightness: 'high',
           automatic: true,
         },
         sunroof: {
-          type: "panoramic",
-          size: "large",
+          type: 'panoramic',
+          size: 'large',
           automatic: true,
         },
       },
@@ -1002,12 +1027,12 @@ router.get("/car", function (req, res) {
       },
     },
     engine: {
-      type: "gasoline",
+      type: 'gasoline',
       displacement: 2.5,
       horsepower: 206,
       torque: 186,
       transmission: {
-        type: "automatic",
+        type: 'automatic',
         gears: 8,
       },
     },
@@ -1032,138 +1057,133 @@ router.get("/car", function (req, res) {
 
 // ================================================================
 
-
-router.get("/js", function (req, res) {
-
 router.get('/js', function (req, res) {
+  router.get('/js', function (req, res) {
+    // res.render генерує нам HTML сторінку
 
-  // res.render генерує нам HTML сторінку
-
-  //            ↙ cюди вводимо назву файлу з сontainer
-  res.render("js", {
-    layout: "basic",
-    name: "JavaScript",
-    description:
-      "JavaScript is a popular high-level, dynamic, and interpreted programming language.",
-    history: {
-      year: 1995,
-      founder: "Brendan Eich",
-    },
-    types: [
-      "Number",
-      "String",
-      "Boolean",
-      "Null",
-      "Undefined",
-      "Symbol",
-      "Object",
-    ],
-    syntax: {
-      variables: ["var", "let", "const"],
-      functions: ["function"],
-      conditionals: ["if", "else", "switch"],
-      loops: ["for", "while", "do-while"],
-      classes: ["class"],
-    },
-    features: [
-      "First-class functions",
-      "Closures",
-      "Dynamic typing",
-      "Prototype-based inheritance",
-      "Asynchronous programming with Promises and async/await",
-      "Modules with import/export statements",
-    ],
-    libraries: [
-      "jQuery",
-      "React",
-      "Angular",
-      "Vue",
-      "Node.js",
-      "Express.js",
-      "Lodash",
-      "Moment.js",
-    ],
-    tools: [
-      "Babel",
-      "Webpack",
-      "ESLint",
-      "Jest",
-      "Mocha",
-      "Chai",
-      "Selenium",
-      "Cypress",
-    ],
-    community: [
-      {
-        name: "Stack Overflow",
-        type: "forum",
+    //            ↙ cюди вводимо назву файлу з сontainer
+    res.render('js', {
+      layout: 'basic',
+      name: 'JavaScript',
+      description:
+        'JavaScript is a popular high-level, dynamic, and interpreted programming language.',
+      history: {
+        year: 1995,
+        founder: 'Brendan Eich',
       },
-      {
-        name: "JavaScript Weekly",
-        type: "newsletter",
+      types: [
+        'Number',
+        'String',
+        'Boolean',
+        'Null',
+        'Undefined',
+        'Symbol',
+        'Object',
+      ],
+      syntax: {
+        variables: ['var', 'let', 'const'],
+        functions: ['function'],
+        conditionals: ['if', 'else', 'switch'],
+        loops: ['for', 'while', 'do-while'],
+        classes: ['class'],
       },
-            {
-        name: 'The Changelog',
-        type: 'podcast',
-      },
-      {
-        name: 'CSS-Tricks',
-        type: 'blog',
-      },
-    ],
+      features: [
+        'First-class functions',
+        'Closures',
+        'Dynamic typing',
+        'Prototype-based inheritance',
+        'Asynchronous programming with Promises and async/await',
+        'Modules with import/export statements',
+      ],
+      libraries: [
+        'jQuery',
+        'React',
+        'Angular',
+        'Vue',
+        'Node.js',
+        'Express.js',
+        'Lodash',
+        'Moment.js',
+      ],
+      tools: [
+        'Babel',
+        'Webpack',
+        'ESLint',
+        'Jest',
+        'Mocha',
+        'Chai',
+        'Selenium',
+        'Cypress',
+      ],
+      community: [
+        {
+          name: 'Stack Overflow',
+          type: 'forum',
+        },
+        {
+          name: 'JavaScript Weekly',
+          type: 'newsletter',
+        },
+        {
+          name: 'The Changelog',
+          type: 'podcast',
+        },
+        {
+          name: 'CSS-Tricks',
+          type: 'blog',
+        },
+      ],
+    })
+    //                  ↑↑ сюди вводимо JSON дані
   })
-  //                  ↑↑ сюди вводимо JSON дані
 })
-
-})
-
-
 // ================================================================
 
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
-router.get("/task22", function (req, res) {
+router.get('/task22', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render("task22", {
-    layout: "task22",
+  res.render('task22', {
+    layout: 'task22',
     page_header: {
-      layout: "basic",
-      title: "InnovaMind",
-      description: "Welcome to our wonderful community",
+      layout: 'basic',
+      title: 'InnovaMind',
+      description: 'Welcome to our wonderful community',
     },
     section: {
       about_us: {
         title_list: {
-          main: "InnovaMind",
-          sub: "InnovaMind is a forward-thinking startup focused on innovation. We are dedicated to creating efficient and powerful software through the use of first-class functions.",
+          main: 'InnovaMind',
+          sub: 'InnovaMind is a forward-thinking startup focused on innovation. We are dedicated to creating efficient and powerful software through the use of first-class functions.',
         },
-        button: { text: "Show more" },
+        button: { text: 'Show more' },
       },
       advantage: {
-        title: "Advantage",
+        title: 'Advantage',
         efficiency: {
-          title: "Efficiency",
-          sub_title: "Streamline your software development",
+          title: 'Efficiency',
+          sub_title: 'Streamline your software development',
           description:
-            "Streamline your software development with our innovative platform...",
-          button: "Show more",
+            'Streamline your software development with our innovative platform...',
+          button: 'Show more',
         },
         innovation: {
-          title: "Innovation",
-          sub_title: "Forward-thinking approach to programming",
+          title: 'Innovation',
+          sub_title:
+            'Forward-thinking approach to programming',
           description:
-            " Stay ahead of the curve with our forward-thinking approach to programming...",
-          button: "Show more",
+            ' Stay ahead of the curve with our forward-thinking approach to programming...',
+          button: 'Show more',
         },
         collaboration: {
-          title: "Collaboration",
-          sub_title: "Connect with like-minded developers",
+          title: 'Collaboration',
+          sub_title: 'Connect with like-minded developers',
           description:
-            "Connect with a community of like-minded developers to share knowledge and insights...",
-          button: "Show more",
+            'Connect with a community of like-minded developers to share knowledge and insights...',
+          button: 'Show more',
         },
       },
       agreement: {
@@ -1188,15 +1208,15 @@ router.get("/task22", function (req, res) {
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
-router.get("/bootstrap1", function (req, res) {
+router.get('/bootstrap1', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render("bootstrap1", {
-    layout: "bootstrap",
-  });
+  res.render('bootstrap1', {
+    layout: 'bootstrap',
+  })
   //                  ↑↑ сюди вводимо JSON дані
-});
+})
 
 // ================================================================
 
@@ -1206,61 +1226,61 @@ router.get("/bootstrap1", function (req, res) {
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
 
-router.get("/task21", function (req, res) {
+router.get('/task21', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render("task21", {
-    layout: "basic",
+  res.render('task21', {
+    layout: 'basic',
     heading: {
       main: {
-        title: "JavaScript",
-        text: "JavaScript is a popular high-level, dynamic, and interpreted programming language.",
+        title: 'JavaScript',
+        text: 'JavaScript is a popular high-level, dynamic, and interpreted programming language.',
         button_text: {
-          solid: "Open page",
-          outline: "Add to cart",
+          solid: 'Open page',
+          outline: 'Add to cart',
         },
       },
       second: {
-        title: "Stack Overflow",
-        text: "First-class functions",
+        title: 'Stack Overflow',
+        text: 'First-class functions',
         button_text: {
-          solid: "Open page",
-          outline: "Add to cart",
+          solid: 'Open page',
+          outline: 'Add to cart',
         },
       },
       subblock: {
-        title: "JavaScript Weekly",
-        text: "Prototype-based inheritance newsletter",
+        title: 'JavaScript Weekly',
+        text: 'Prototype-based inheritance newsletter',
         button_text: {
-          solid: "Open page",
-          outline: "Add to cart",
+          solid: 'Open page',
+          outline: 'Add to cart',
         },
       },
     },
     nested_display: {
-      title: "HTML",
+      title: 'HTML',
       children_display: {
-        title: "Outdated HTML tags",
-        text: "tags that have been identified as deprecated and not recommended for use in HTML version 5",
+        title: 'Outdated HTML tags',
+        text: 'tags that have been identified as deprecated and not recommended for use in HTML version 5',
         button: {
-          text: "Орen",
+          text: 'Орen',
         },
       },
-      header_text: "Sections",
+      header_text: 'Sections',
       button: {
-        text: "Learn more",
+        text: 'Learn more',
       },
     },
     paragraph: {
-      title: "About modules",
-      text: "Modules with import/export statements",
+      title: 'About modules',
+      text: 'Modules with import/export statements',
 
       button: {
-        text: "Open link page",
-        url: "https://google.com",
+        text: 'Open link page',
+        url: 'https://google.com',
       },
-       list_name: [
+      list_name: [
         {
           text: 'Github',
           url: 'https://github.com/',
@@ -1281,165 +1301,169 @@ router.get("/task21", function (req, res) {
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
-router.get("/task31", function (req, res) {
+router.get('/task31', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render("task31", {
-    layout: "basic",
+  res.render('task31', {
+    layout: 'basic',
     navigation: {
       links: [
         {
-          text: "Home",
-          href: "https://github.com/",
+          text: 'Home',
+          href: 'https://github.com/',
         },
         {
-          text: "Contacts",
-          href: "https://www.google.com/",
+          text: 'Contacts',
+          href: 'https://www.google.com/',
         },
         {
-          text: "Help",
-          href: "https://www.youtube.com/",
+          text: 'Help',
+          href: 'https://www.youtube.com/',
         },
       ],
       button: {
-        text: "Lets start",
-        href: "https://nodejs.org/en/",
+        text: 'Lets start',
+        href: 'https://nodejs.org/en/',
       },
     },
     header: {
-      title: "Welcome to Our Website",
+      title: 'Welcome to Our Website',
       description:
-        "We offer innovative solutions to help grow your business. Our team of experts is committed to providing tailored strategies that deliver the best results.",
+        'We offer innovative solutions to help grow your business. Our team of experts is committed to providing tailored strategies that deliver the best results.',
       button: {
-        text: "Learn More",
-        link: "https://www.youtube.com/",
+        text: 'Learn More',
+        link: 'https://www.youtube.com/',
       },
     },
     city: {
-      title: "City list",
+      title: 'City list',
       cards: [
         {
           picture: {
-            src: "https://picsum.photos/400/200",
-            alt: "New York",
+            src: 'https://picsum.photos/400/200',
+            alt: 'New York',
           },
-          title: "New York City",
+          title: 'New York City',
           description:
-            "New York City comprises 5 boroughs sitting where the Hudson River meets the Atlantic Ocean. At its core is Manhattan, a densely populated borough that’s among the world’s major commercial, financial and cultural centers. Its iconic sites include skyscrapers such as the Empire State Building and sprawling Central Park.",
+            'New York City comprises 5 boroughs sitting where the Hudson River meets the Atlantic Ocean. At its core is Manhattan, a densely populated borough that’s among the world’s major commercial, financial and cultural centers. Its iconic sites include skyscrapers such as the Empire State Building and sprawling Central Park.',
           button: {
-            text: "Read",
-            href: "https://github.com/",
+            text: 'Read',
+            href: 'https://github.com/',
           },
         },
         {
           picture: {
-            src: "https://picsum.photos/400/200",
-            alt: "Paris",
+            src: 'https://picsum.photos/400/200',
+            alt: 'Paris',
           },
-          title: "Paris",
+          title: 'Paris',
           description:
             "Paris, France's capital, is a major European city and a global center for art, fashion, gastronomy, and culture. Its 19th-century cityscape is crisscrossed by wide boulevards and the River Seine. Beyond such landmarks as the Eiffel Tower and the 12th-century, Gothic Notre-Dame cathedral, the city is known for its cafe culture, haute couture fashion houses, and designer boutiques along the Rue du Faubourg Saint-Honoré.",
           button: {
-            text: "Read",
-            href: "https://github.com/",
+            text: 'Read',
+            href: 'https://github.com/',
           },
         },
         {
           picture: {
-            src: "https://picsum.photos/400/200",
-            alt: "Tokyo",
+            src: 'https://picsum.photos/400/200',
+            alt: 'Tokyo',
           },
-          title: "Tokyo",
+          title: 'Tokyo',
           description:
             "Tokyo, Japan’s bustling capital, mixes the ultramodern and the traditional, from neon-lit skyscrapers to historic temples. The opulent Meiji Shinto Shrine is known for its towering gate and surrounding woods. The Imperial Palace sits amid large public gardens. The city's many museums offer exhibits ranging from classical art (in the Tokyo National Museum) to a reconstructed kabuki theater (in the Edo-Tokyo Museum).",
           button: {
-            text: "Read",
-            href: "https://github.com/",
+            text: 'Read',
+            href: 'https://github.com/',
           },
         },
         {
           picture: {
-            src: "https://picsum.photos/400/200",
-            alt: "Sydney",
+            src: 'https://picsum.photos/400/200',
+            alt: 'Sydney',
           },
-          title: "Sydney",
+          title: 'Sydney',
           description:
             "Sydney, capital of New South Wales and one of Australia's largest cities, is best known for its harborfront Opera House, with a distinctive sail-like design. Massive Darling Harbour and the smaller Circular Quay port are hubs of waterside life, with the arched Harbour Bridge and esteemed Royal Botanic Garden nearby. Sydney Tower’s outdoor platform, the Skywalk, offers 360-degree views of the city and suburbs.",
           button: {
-            text: "Read",
-            href: "https://github.com/",
+            text: 'Read',
+            href: 'https://github.com/',
           },
         },
       ],
     },
     winner: {
-      title: "Our winners",
+      title: 'Our winners',
       table: {
-        head: ["#", "name", "surname", "nickname"],
+        head: ['#', 'name', 'surname', 'nickname'],
         user: [
           {
             place: 1,
-            name: "Ada",
-            surname: "Lovelace",
-            nickname: "The Enchantress of Numbers",
+            name: 'Ada',
+            surname: 'Lovelace',
+            nickname: 'The Enchantress of Numbers',
           },
           {
             place: 2,
-            name: "Grace",
-            surname: "Hopper",
-            nickname: "Amazing Grace",
+            name: 'Grace',
+            surname: 'Hopper',
+            nickname: 'Amazing Grace',
           },
           {
             place: 3,
-            name: "Katherine",
-            surname: "Johnson",
-            nickname: "The Human Computer",
+            name: 'Katherine',
+            surname: 'Johnson',
+            nickname: 'The Human Computer',
           },
         ],
       },
     },
     gallery: {
-      title: "Picture history",
+      title: 'Picture history',
       cards: [
         {
-          name: "The Mona Lisa",
-          items: ["Painting", "Oil on poplar panel", "1503-1519"],
+          name: 'The Mona Lisa',
+          items: [
+            'Painting',
+            'Oil on poplar panel',
+            '1503-1519',
+          ],
         },
         {
-          name: "The Persistence of Memory",
-          items: ["Painting", "Oil on canvas", "1931"],
+          name: 'The Persistence of Memory',
+          items: ['Painting', 'Oil on canvas', '1931'],
         },
         {
-          name: "The Starry Night",
-          items: ["Painting", "Oil on canvas", "1889"],
+          name: 'The Starry Night',
+          items: ['Painting', 'Oil on canvas', '1889'],
         },
       ],
     },
     relaxion: {
-      title: "Relax",
+      title: 'Relax',
       cards: [
         {
-          header: "Meditation",
-          title: "The Benefits of Meditation",
+          header: 'Meditation',
+          title: 'The Benefits of Meditation',
           description:
-            "Meditation can help reduce stress, anxiety, and depression, and improve overall well-being. Studies have also shown that regular meditation practice can enhance cognitive function and even boost the immune system.",
+            'Meditation can help reduce stress, anxiety, and depression, and improve overall well-being. Studies have also shown that regular meditation practice can enhance cognitive function and even boost the immune system.',
         },
         {
-          header: "Hydration",
-          title: "The Importance of Hydration",
+          header: 'Hydration',
+          title: 'The Importance of Hydration',
           description:
-            "Drinking enough water is essential for good health. Dehydration can lead to a range of symptoms, including fatigue, headaches, and constipation. It can also increase the risk of kidney stones and other health problems.",
+            'Drinking enough water is essential for good health. Dehydration can lead to a range of symptoms, including fatigue, headaches, and constipation. It can also increase the risk of kidney stones and other health problems.',
         },
         {
-          header: "Yoga",
-          title: "The Benefits of Yoga",
+          header: 'Yoga',
+          title: 'The Benefits of Yoga',
           description:
-            "Yoga can improve flexibility, strength, and balance, and help reduce stress and anxiety. It has also been shown to improve heart health and promote a sense of well-being.",
+            'Yoga can improve flexibility, strength, and balance, and help reduce stress and anxiety. It has also been shown to improve heart health and promote a sense of well-being.',
         },
         {
-          header: "Sunscreen",
-          title: "The Importance of Sunscreen",
+          header: 'Sunscreen',
+          title: 'The Importance of Sunscreen',
           description:
             "Protecting your skin from the sun's harmful rays is crucial for reducing the risk of skin cancer and premature aging. Experts recommend using a broad-spectrum sunscreen with an SPF of at least 30 and reapplying every two hours.",
         },
@@ -1448,68 +1472,68 @@ router.get("/task31", function (req, res) {
     rest: {
       cards: [
         {
-          header: "Cooking",
-          title: "The Joy of Cooking",
+          header: 'Cooking',
+          title: 'The Joy of Cooking',
           description:
-            "Cooking is a creative outlet that can bring people together over delicious food.",
-          button: "Learn More",
-          footer: "Photo by Brooke Lark on Unsplash",
+            'Cooking is a creative outlet that can bring people together over delicious food.',
+          button: 'Learn More',
+          footer: 'Photo by Brooke Lark on Unsplash',
         },
         {
-          header: "Travel",
-          title: "The Benefits of Traveling",
+          header: 'Travel',
+          title: 'The Benefits of Traveling',
           description:
-            "Traveling broadens your perspective, provides new experiences, and creates lasting memories.",
-          button: "Explore",
-          footer: "Photo by Sime Basioli on Unsplash",
+            'Traveling broadens your perspective, provides new experiences, and creates lasting memories.',
+          button: 'Explore',
+          footer: 'Photo by Sime Basioli on Unsplash',
         },
       ],
     },
     proposition: {
-      title: "Proposition",
+      title: 'Proposition',
       card: [
         {
-          header: "Our Approach",
-          title: "Innovative Solutions for Your Business",
+          header: 'Our Approach',
+          title: 'Innovative Solutions for Your Business',
           description:
-            "We create effective solutions that cater to your business needs.",
+            'We create effective solutions that cater to your business needs.',
         },
         {
-          header: "Our Expertise",
-          title: "Trusted and Experienced Professionals",
+          header: 'Our Expertise',
+          title: 'Trusted and Experienced Professionals',
           description:
-            "Our team of experts delivers tailored strategies for best results.",
+            'Our team of experts delivers tailored strategies for best results.',
         },
       ],
     },
     footer: {
-      title: "Navigation",
+      title: 'Navigation',
       navigation: [
         {
-          text: "Home",
-          href: "https://github.com/",
+          text: 'Home',
+          href: 'https://github.com/',
         },
         {
-          text: "Contacts",
-          href: "https://www.google.com/",
+          text: 'Contacts',
+          href: 'https://www.google.com/',
         },
         {
-          text: "Help",
-          href: "https://www.youtube.com/",
+          text: 'Help',
+          href: 'https://www.youtube.com/',
         },
       ],
       socialMedia: [
         {
-          name: "Facebook",
-          link: "https://www.facebook.com/",
+          name: 'Facebook',
+          link: 'https://www.facebook.com/',
         },
         {
-          name: "Twitter",
-          link: "https://twitter.com/",
+          name: 'Twitter',
+          link: 'https://twitter.com/',
         },
         {
-          name: "Instagram",
-          link: "https://www.instagram.com/",
+          name: 'Instagram',
+          link: 'https://www.instagram.com/',
         },
       ],
       partners: [
@@ -1537,25 +1561,25 @@ router.get("/task31", function (req, res) {
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
-router.get("/list", function (req, res) {
+router.get('/list', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render("list", {
-    layout: "bootstrap",
+  res.render('list', {
+    layout: 'bootstrap',
     list: [
-      { name: "First button" },
-      { name: "Secondary button" },
-      { name: "Error button" },
-      { name: "Submit button" },
+      { name: 'First button' },
+      { name: 'Secondary button' },
+      { name: 'Error button' },
+      { name: 'Submit button' },
     ],
     user: {
       name: {
-        value: "Victor",
-        text: "Smith",
+        value: 'Victor',
+        text: 'Smith',
       },
       role: {
-        value: "Admin",
+        value: 'Admin',
       },
       isConfirm: {
         value: true,
@@ -1564,9 +1588,9 @@ router.get("/list", function (req, res) {
         value: 32,
       },
     },
-  });
+  })
   //                  ↑↑ сюди вводимо JSON дані
-});
+})
 
 // ================================================================
 
@@ -1596,70 +1620,69 @@ router.get('/shophome', function (req, res) {
           text: 'Help',
           href: 'https://www.youtube.com/',
         },
-        {
-          text: "Other",
-          href: "https://www.google.com/",
-          isDisabled: true,
-        },
       ],
     },
 
     newsBlock: {
-      title: "Latest News",
+      title: 'Latest News',
       cards: [
         {
-          title: "COVID-19 Vaccinations Begin in Europe",
+          title: 'COVID-19 Vaccinations Begin in Europe',
           description:
-            "As the world continues to grapple with the ongoing COVID-19 pandemic, Europe begins its vaccination rollout, with healthcare workers and the elderly among the first to receive the vaccine.",
+            'As the world continues to grapple with the ongoing COVID-19 pandemic, Europe begins its vaccination rollout, with healthcare workers and the elderly among the first to receive the vaccine.',
           isTop: false,
           isNew: false,
         },
         {
-          title: "Tesla Stock Surges After Record Sales",
+          title: 'Tesla Stock Surges After Record Sales',
           description:
             "Tesla's stock price jumps 10% following the company's announcement of record sales in the last quarter, thanks in part to strong demand for its electric vehicles.",
           isTop: true,
           isNew: true,
         },
         {
-          title: "New Study Shows Benefits of Meditation for Mental Health",
+          title:
+            'New Study Shows Benefits of Meditation for Mental Health',
           description:
-            "A new study published in the Journal of the American Medical Association finds that practicing mindfulness meditation can lead to improved mental health outcomes for people struggling with depression and anxiety.",
+            'A new study published in the Journal of the American Medical Association finds that practicing mindfulness meditation can lead to improved mental health outcomes for people struggling with depression and anxiety.',
           isTop: false,
           isNew: false,
         },
         {
-          title: "NASA Launches New Mars Rover",
+          title: 'NASA Launches New Mars Rover',
           description:
             "NASA's Perseverance rover successfully launches on a mission to explore Mars, with the goal of collecting samples of the planet's surface and searching for signs of ancient microbial life.",
           isTop: false,
           isNew: true,
         },
         {
-          title: "GameStop Shares Soar as Reddit Traders Rally",
+          title:
+            'GameStop Shares Soar as Reddit Traders Rally',
           description:
-            "Shares of GameStop surge as amateur traders on the social media platform Reddit rally to drive up the price, in what some are calling a battle between Wall Street and Main Street.",
+            'Shares of GameStop surge as amateur traders on the social media platform Reddit rally to drive up the price, in what some are calling a battle between Wall Street and Main Street.',
           isTop: false,
           isNew: false,
         },
         {
-          title: "UK Announces Plan to Ban Sale of Gas-Powered Cars by 2030",
+          title:
+            'UK Announces Plan to Ban Sale of Gas-Powered Cars by 2030',
           description:
-            "In an effort to combat climate change, the UK government announces a plan to ban the sale of new gas-powered cars and vans by 2030, with hybrid vehicles to follow in 2035.",
+            'In an effort to combat climate change, the UK government announces a plan to ban the sale of new gas-powered cars and vans by 2030, with hybrid vehicles to follow in 2035.',
           isTop: true,
           isNew: false,
         },
         {
-          title: "New Study Shows Link Between Exercise and Longevity",
+          title:
+            'New Study Shows Link Between Exercise and Longevity',
           description:
-            "A new study published in the Journal of the American Medical Association suggests that regular exercise can help people live longer, with participants who exercised regularly having a lower risk of premature death.",
+            'A new study published in the Journal of the American Medical Association suggests that regular exercise can help people live longer, with participants who exercised regularly having a lower risk of premature death.',
           isTop: false,
           isNew: false,
         },
         {
-          title: "Amazon Expands Grocery Delivery Service",
+          title: 'Amazon Expands Grocery Delivery Service',
           description:
-            "Amazon announces an expansion of its grocery delivery service, with plans to offer free delivery to Prime members on orders over $35 and to expand its selection of fresh and organic produce.",
+            'Amazon announces an expansion of its grocery delivery service, with plans to offer free delivery to Prime members on orders over $35 and to expand its selection of fresh and organic produce.',
           isTop: false,
           isNew: true,
         },
@@ -1671,97 +1694,98 @@ router.get('/shophome', function (req, res) {
         {
           isActive: true,
           isDisabled: false,
-          text: "Electronics",
+          text: 'Electronics',
         },
         {
           isActive: false,
           isDisabled: false,
-          text: "Home & Kitchen",
+          text: 'Home & Kitchen',
         },
         {
           isActive: false,
           isDisabled: false,
-          text: "Clothing & Accessories",
+          text: 'Clothing & Accessories',
         },
         {
           isActive: false,
           isDisabled: true,
-          text: "Toys & Games",
+          text: 'Toys & Games',
         },
       ],
       cards: [
         {
-          image: "https://picsum.photos/400/200",
-          title: "iPhone 13",
+          image: 'https://picsum.photos/400/200',
+          title: 'iPhone 13',
           description:
-            "The latest iPhone model features a new A15 Bionic chip, improved camera system, and longer battery life.",
+            'The latest iPhone model features a new A15 Bionic chip, improved camera system, and longer battery life.',
           isHot: false,
           isNew: false,
         },
         {
-          image: "https://picsum.photos/400/200",
-          title: "MacBook Pro",
+          image: 'https://picsum.photos/400/200',
+          title: 'MacBook Pro',
           description:
             "Apple's high-end laptop features a 16-inch Retina display, powerful M1 Pro or M1 Max chip, and up to 64GB of RAM.",
           isHot: true,
           isNew: false,
         },
         {
-          image: "https://picsum.photos/400/200",
-          title: "AirPods Pro",
+          image: 'https://picsum.photos/400/200',
+          title: 'AirPods Pro',
           description:
             "Apple's premium wireless earbuds feature active noise cancellation, a customizable fit, and up to 4.5 hours of listening time.",
           isHot: false,
           isNew: false,
         },
         {
-          image: "https://picsum.photos/400/200",
-          title: "Sony Bravia XR A90J",
+          image: 'https://picsum.photos/400/200',
+          title: 'Sony Bravia XR A90J',
           description:
-            "This OLED TV boasts a 4K resolution, HDR support, and a high refresh rate for smooth motion handling.",
+            'This OLED TV boasts a 4K resolution, HDR support, and a high refresh rate for smooth motion handling.',
           isHot: false,
           isNew: true,
         },
         {
-          image: "https://picsum.photos/400/200",
-          title: "Nintendo Switch OLED Model",
+          image: 'https://picsum.photos/400/200',
+          title: 'Nintendo Switch OLED Model',
           description:
-            "The latest iteration of the popular gaming console features a larger OLED screen and improved audio quality.",
+            'The latest iteration of the popular gaming console features a larger OLED screen and improved audio quality.',
           isHot: false,
           isNew: false,
         },
         {
-          image: "https://picsum.photos/400/200",
-          title: "Bose SoundLink Revolve+",
+          image: 'https://picsum.photos/400/200',
+          title: 'Bose SoundLink Revolve+',
           description:
-            "This portable Bluetooth speaker features 360-degree sound, water-resistant construction, and up to 16 hours of battery life.",
+            'This portable Bluetooth speaker features 360-degree sound, water-resistant construction, and up to 16 hours of battery life.',
           isHot: true,
           isNew: true,
         },
       ],
     },
     subscribe: {
-      header: "Unlock Premium Content",
-      description: "Subscribe to access exclusive content and features.",
+      header: 'Unlock Premium Content',
+      description:
+        'Subscribe to access exclusive content and features.',
       buttons: [
         {
-          text: "Register Now",
-          link: "https://www.youtube.com/",
+          text: 'Register Now',
+          link: 'https://www.youtube.com/',
         },
         {
-          text: "Buy Subscription",
-          link: "https://www.youtube.com/",
+          text: 'Buy Subscription',
+          link: 'https://www.youtube.com/',
         },
       ],
     },
     service: {
-      title: "Our Services",
+      title: 'Our Services',
       description:
-        "We offer a variety of services to meet your needs, including web design, content creation, and social media management.",
+        'We offer a variety of services to meet your needs, including web design, content creation, and social media management.',
       buttons: [
         {
-          text: "Show More",
-          link: "https://www.youtube.com/",
+          text: 'Show More',
+          link: 'https://www.youtube.com/',
         },
       ],
     },
@@ -1769,96 +1793,96 @@ router.get('/shophome', function (req, res) {
     footer: [
       [
         {
-          text: "Home",
-          link: "https://www.youtube.com/",
+          text: 'Home',
+          link: 'https://www.youtube.com/',
         },
         {
-          text: "Trending",
-          link: "https://www.youtube.com/feed/trending",
+          text: 'Trending',
+          link: 'https://www.youtube.com/feed/trending',
         },
         {
-          text: "Subscriptions",
-          link: "https://www.youtube.com/feed/subscriptions",
+          text: 'Subscriptions',
+          link: 'https://www.youtube.com/feed/subscriptions',
         },
         {
-          text: "Library",
-          link: "https://www.youtube.com/feed/library",
+          text: 'Library',
+          link: 'https://www.youtube.com/feed/library',
           isDisabled: true,
         },
       ],
       [
         {
-          text: "History",
-          link: "https://www.youtube.com/feed/history",
+          text: 'History',
+          link: 'https://www.youtube.com/feed/history',
         },
         {
-          text: "Your Videos",
-          link: "https://www.youtube.com/feed/my_videos",
+          text: 'Your Videos',
+          link: 'https://www.youtube.com/feed/my_videos',
         },
         {
-          text: "Live",
-          link: "https://www.youtube.com/live",
+          text: 'Live',
+          link: 'https://www.youtube.com/live',
         },
         {
-          text: "Settings",
-          link: "https://www.youtube.com/account",
+          text: 'Settings',
+          link: 'https://www.youtube.com/account',
           isDisabled: true,
         },
       ],
       [
         {
-          text: "Watch Later",
-          link: "https://www.youtube.com/playlist?list=WL",
+          text: 'Watch Later',
+          link: 'https://www.youtube.com/playlist?list=WL',
         },
         {
-          text: "Liked Videos",
-          link: "https://www.youtube.com/playlist?list=LL",
+          text: 'Liked Videos',
+          link: 'https://www.youtube.com/playlist?list=LL',
         },
         {
-          text: "Music",
-          link: "https://www.youtube.com/music",
+          text: 'Music',
+          link: 'https://www.youtube.com/music',
         },
         {
-          text: "Gaming",
-          link: "https://www.youtube.com/gaming",
+          text: 'Gaming',
+          link: 'https://www.youtube.com/gaming',
           isDisabled: true,
         },
       ],
       [
         {
-          text: "Sports",
-          link: "https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg",
+          text: 'Sports',
+          link: 'https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg',
         },
         {
-          text: "News",
-          link: "https://www.youtube.com/news",
+          text: 'News',
+          link: 'https://www.youtube.com/news',
         },
         {
-          text: "Fashion & Beauty",
-          link: "https://www.youtube.com/channel/UC1x8rV_f-2yPpzlN0JWZXIQ",
+          text: 'Fashion & Beauty',
+          link: 'https://www.youtube.com/channel/UC1x8rV_f-2yPpzlN0JWZXIQ',
         },
         {
-          text: "Learning",
-          link: "https://www.youtube.com/learning",
+          text: 'Learning',
+          link: 'https://www.youtube.com/learning',
           isDisabled: true,
         },
       ],
       [
         {
-          text: "Report History",
-          link: "https://www.youtube.com/feed/history/report_history",
+          text: 'Report History',
+          link: 'https://www.youtube.com/feed/history/report_history',
         },
         {
-          text: "Help",
-          link: "https://support.google.com/youtube/?hl=en",
+          text: 'Help',
+          link: 'https://support.google.com/youtube/?hl=en',
         },
         {
-          text: "Send Feedback",
-          link: "https://support.google.com/youtube/answer/4347644?hl=en",
+          text: 'Send Feedback',
+          link: 'https://support.google.com/youtube/answer/4347644?hl=en',
         },
         {
-          text: "About",
-          link: "https://www.youtube.com/about/",
+          text: 'About',
+          link: 'https://www.youtube.com/about/',
           isDisabled: true,
         },
       ],
@@ -1874,107 +1898,107 @@ router.get('/shophome', function (req, res) {
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
-router.get("/shopproduct", function (req, res) {
+router.get('/shopproduct', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render("shopproduct", {
-    layout: "shop",
+  res.render('shopproduct', {
+    layout: 'shop',
     navigation: {
       links: [
         {
-          text: "Home",
-          href: "https://github.com/",
+          text: 'Home',
+          href: 'https://github.com/',
         },
         {
-          text: "Contacts",
-          href: "https://www.google.com/",
+          text: 'Contacts',
+          href: 'https://www.google.com/',
         },
         {
-          text: "Help",
-          href: "https://www.youtube.com/",
+          text: 'Help',
+          href: 'https://www.youtube.com/',
         },
         {
-          text: "Other",
-          href: "https://www.youtube.com/",
+          text: 'Other',
+          href: 'https://www.youtube.com/',
           isDisabled: true,
         },
       ],
     },
 
     breadcrumb: [
-      { name: "Home", url: "https://github.com/" },
-      { name: "PC", url: "https://www.google.com/" },
-      { name: "Windows", url: "https://github.com/" },
-      { name: "Product PC #3123", url: null },
+      { name: 'Home', url: 'https://github.com/' },
+      { name: 'PC', url: 'https://www.google.com/' },
+      { name: 'Windows', url: 'https://github.com/' },
+      { name: 'Product PC #3123', url: null },
     ],
 
     productData: {
-      img: "https://picsum.photos/400/200",
+      img: 'https://picsum.photos/400/200',
 
       info: {
-        title: "Product PC Asus 331 BC 671",
+        title: 'Product PC Asus 331 BC 671',
         about:
           "Some quick example text to build on the card title and make up the bulk of the card's content.",
-        price: "1000$",
+        price: '1000$',
 
         category: [
-          { name: "HOT", isHot: true },
-          { name: "New", isNew: true },
-          { name: "Bonus", isBonus: true },
+          { name: 'HOT', isHot: true },
+          { name: 'New', isNew: true },
+          { name: 'Bonus', isBonus: true },
         ],
       },
 
       actionList: [
-        { name: "Buy", isWarning: true },
-        { name: "Add to cart", isError: true },
-        { name: "Like", isSuccess: true },
-        { name: "Share", isGood: true },
+        { name: 'Buy', isWarning: true },
+        { name: 'Add to cart', isError: true },
+        { name: 'Like', isSuccess: true },
+        { name: 'Share', isGood: true },
       ],
 
       item: {
-        head: ["#", "color", "price"],
+        head: ['#', 'color', 'price'],
 
         body: [
-          ["id312", "red", "1100$"],
-          ["id532", "blue", "1050$"],
-          ["id643", "dark", "999$"],
+          ['id312', 'red', '1100$'],
+          ['id532', 'blue', '1050$'],
+          ['id643', 'dark', '999$'],
         ],
       },
 
       param: {
-        title: "Product params",
-        list: ["Экран 15.6", "IPS (1920x1080)", "Full HD"],
+        title: 'Product params',
+        list: ['Экран 15.6', 'IPS (1920x1080)', 'Full HD'],
       },
 
       alert: {
         isError: true,
-        text: "Danger! This is a danger alert — check it out!",
+        text: 'Danger! This is a danger alert — check it out!',
       },
     },
 
     goodsOtherBlock: {
-      title: "See other products",
+      title: 'See other products',
       cards: [
         {
-          image: "https://picsum.photos/400/200",
-          title: "iPhone 13",
+          image: 'https://picsum.photos/400/200',
+          title: 'iPhone 13',
           description:
-            "The latest iPhone model features a new A15 Bionic chip, improved camera system, and longer battery life.",
+            'The latest iPhone model features a new A15 Bionic chip, improved camera system, and longer battery life.',
           isHot: false,
           idNew: false,
         },
         {
-          image: "https://picsum.photos/400/200",
-          title: "MacBook Pro",
+          image: 'https://picsum.photos/400/200',
+          title: 'MacBook Pro',
           description:
             "Apple's high-end laptop features a 16-inch Retina display, powerful M1 Pro or M1 Max chip, and up to 64GB of RAM.",
           isHot: true,
           idNew: false,
         },
         {
-          image: "https://picsum.photos/400/200",
-          title: "AirPods Pro",
+          image: 'https://picsum.photos/400/200',
+          title: 'AirPods Pro',
           description:
             "Apple's premium wireless earbuds feature active noise cancellation, a customizable fit, and up to 4.5 hours of listening time.",
           isHot: false,
@@ -2102,102 +2126,104 @@ router.get("/shopproduct", function (req, res) {
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
-router.get("/shopnews", function (req, res) {
+router.get('/shopnews', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render("shopnews", {
-    layout: "shop",
+  res.render('shopnews', {
+    layout: 'shop',
     navigation: {
       links: [
         {
-          text: "Home",
-          href: "https://github.com/",
+          text: 'Home',
+          href: 'https://github.com/',
         },
         {
-          text: "Contacts",
-          href: "https://www.google.com/",
+          text: 'Contacts',
+          href: 'https://www.google.com/',
         },
         {
-          text: "Help",
-          href: "https://www.youtube.com/",
+          text: 'Help',
+          href: 'https://www.youtube.com/',
         },
         {
-          text: "Other",
-          href: "https://www.youtube.com/",
+          text: 'Other',
+          href: 'https://www.youtube.com/',
           isDisabled: true,
         },
       ],
     },
 
     breadcrumb: [
-      { name: "Home", url: "https://github.com/" },
-      { name: "News", url: "https://www.google.com/" },
-      { name: "Today", url: "https://github.com/" },
-      { name: "About cats", url: null },
+      { name: 'Home', url: 'https://github.com/' },
+      { name: 'News', url: 'https://www.google.com/' },
+      { name: 'Today', url: 'https://github.com/' },
+      { name: 'About cats', url: null },
     ],
 
     newsData: {
-      photo: "https://picsum.photos/400/200",
+      photo: 'https://picsum.photos/400/200',
 
       head: {
-        heading: "About cats",
+        heading: 'About cats',
         description:
           "Cats are adorable and beloved pets that have been domesticated for thousands of years. They are known for their independent and playful nature, as well as their agility and hunting skills. With their soft fur, purring, and cuddling, cats make great companions and can bring joy and relaxation to their owners. From domestic short-hairs to exotic breeds, cats come in many shapes, sizes, and colors, each with their own unique personalities. Whether they are napping in a sunny spot or chasing a toy, cats always bring a smile to their owner's faces.",
       },
 
       body: [
         {
-          title: "Cats have a keen sense of hearing",
-          text: "With their highly sensitive ears, cats can detect sounds that are too faint for humans to hear, including the ultrasonic calls of rodents and other small prey.",
+          title: 'Cats have a keen sense of hearing',
+          text: 'With their highly sensitive ears, cats can detect sounds that are too faint for humans to hear, including the ultrasonic calls of rodents and other small prey.',
         },
         {
-          title: "Cats are natural hunters",
-          text: "Thanks to their sharp claws, quick reflexes, and stealthy movements, cats are excellent hunters. They can catch mice, rats, birds, and other prey with ease.",
+          title: 'Cats are natural hunters',
+          text: 'Thanks to their sharp claws, quick reflexes, and stealthy movements, cats are excellent hunters. They can catch mice, rats, birds, and other prey with ease.',
         },
         {
-          title: "Cats are independent creatures",
+          title: 'Cats are independent creatures',
           text: "Cats are known for their independent nature, and unlike dogs, they don't require constant attention and affection from their owners. They are perfectly content to entertain themselves with toys and explore their surroundings on their own.",
         },
         {
-          title: "Cats have a unique way of communicating",
-          text: "From meows and purrs to chirps and trills, cats use a variety of sounds to communicate with their owners and other cats. They also use body language, such as tail movements and ear positions, to convey their moods and intentions.",
+          title: 'Cats have a unique way of communicating',
+          text: 'From meows and purrs to chirps and trills, cats use a variety of sounds to communicate with their owners and other cats. They also use body language, such as tail movements and ear positions, to convey their moods and intentions.',
         },
         {
-          title: "Cats are good for your health",
-          text: "Studies have shown that owning a cat can have numerous health benefits, including lower stress levels, reduced risk of heart disease and stroke, and improved mental health. Plus, cats make great companions and can provide a source of comfort and emotional support.",
+          title: 'Cats are good for your health',
+          text: 'Studies have shown that owning a cat can have numerous health benefits, including lower stress levels, reduced risk of heart disease and stroke, and improved mental health. Plus, cats make great companions and can provide a source of comfort and emotional support.',
         },
       ],
     },
 
     newsOtherBlock: {
-      title: "See other news",
+      title: 'See other news',
       cards: [
         {
-          title: "NASA Launches New Mars Rover",
+          title: 'NASA Launches New Mars Rover',
           description:
             "NASA's Perseverance rover successfully launches on a mission to explore Mars, with the goal of collecting samples of the planet's surface and searching for signs of ancient microbial life.",
           isTop: false,
           isNew: true,
         },
         {
-          title: "GameStop Shares Soar as Reddit Traders Rally",
+          title:
+            'GameStop Shares Soar as Reddit Traders Rally',
           description:
-            "Shares of GameStop surge as amateur traders on the social media platform Reddit rally to drive up the price, in what some are calling a battle between Wall Street and Main Street.",
+            'Shares of GameStop surge as amateur traders on the social media platform Reddit rally to drive up the price, in what some are calling a battle between Wall Street and Main Street.',
           isTop: false,
           isNew: false,
         },
         {
-          title: "New Study Shows Link Between Exercise and Longevity",
+          title:
+            'New Study Shows Link Between Exercise and Longevity',
           description:
-            "A new study published in the Journal of the American Medical Association suggests that regular exercise can help people live longer, with participants who exercised regularly having a lower risk of premature death.",
+            'A new study published in the Journal of the American Medical Association suggests that regular exercise can help people live longer, with participants who exercised regularly having a lower risk of premature death.',
           isTop: false,
           isNew: false,
         },
         {
-          title: "Amazon Expands Grocery Delivery Service",
+          title: 'Amazon Expands Grocery Delivery Service',
           description:
-            "Amazon announces an expansion of its grocery delivery service, with plans to offer free delivery to Prime members on orders over $35 and to expand its selection of fresh and organic produce.",
+            'Amazon announces an expansion of its grocery delivery service, with plans to offer free delivery to Prime members on orders over $35 and to expand its selection of fresh and organic produce.',
           isTop: false,
           isNew: true,
         },
@@ -2205,13 +2231,13 @@ router.get("/shopnews", function (req, res) {
     },
 
     service: {
-      title: "Our Services",
+      title: 'Our Services',
       description:
-        "We offer a variety of services to meet your needs, including web design, content creation, and social media management.",
+        'We offer a variety of services to meet your needs, including web design, content creation, and social media management.',
       buttons: [
         {
-          text: "Show More",
-          link: "https://www.youtube.com/",
+          text: 'Show More',
+          link: 'https://www.youtube.com/',
         },
       ],
     },
@@ -2219,96 +2245,96 @@ router.get("/shopnews", function (req, res) {
     footer: [
       [
         {
-          text: "Home",
-          link: "https://www.youtube.com/",
+          text: 'Home',
+          link: 'https://www.youtube.com/',
         },
         {
-          text: "Trending",
-          link: "https://www.youtube.com/feed/trending",
+          text: 'Trending',
+          link: 'https://www.youtube.com/feed/trending',
         },
         {
-          text: "Subscriptions",
-          link: "https://www.youtube.com/feed/subscriptions",
+          text: 'Subscriptions',
+          link: 'https://www.youtube.com/feed/subscriptions',
         },
         {
-          text: "Library",
-          link: "https://www.youtube.com/feed/library",
+          text: 'Library',
+          link: 'https://www.youtube.com/feed/library',
           isDisabled: true,
         },
       ],
       [
         {
-          text: "History",
-          link: "https://www.youtube.com/feed/history",
+          text: 'History',
+          link: 'https://www.youtube.com/feed/history',
         },
         {
-          text: "Your Videos",
-          link: "https://www.youtube.com/feed/my_videos",
+          text: 'Your Videos',
+          link: 'https://www.youtube.com/feed/my_videos',
         },
         {
-          text: "Live",
-          link: "https://www.youtube.com/live",
+          text: 'Live',
+          link: 'https://www.youtube.com/live',
         },
         {
-          text: "Settings",
-          link: "https://www.youtube.com/account",
+          text: 'Settings',
+          link: 'https://www.youtube.com/account',
           isDisabled: true,
         },
       ],
       [
         {
-          text: "Watch Later",
-          link: "https://www.youtube.com/playlist?list=WL",
+          text: 'Watch Later',
+          link: 'https://www.youtube.com/playlist?list=WL',
         },
         {
-          text: "Liked Videos",
-          link: "https://www.youtube.com/playlist?list=LL",
+          text: 'Liked Videos',
+          link: 'https://www.youtube.com/playlist?list=LL',
         },
         {
-          text: "Music",
-          link: "https://www.youtube.com/music",
+          text: 'Music',
+          link: 'https://www.youtube.com/music',
         },
         {
-          text: "Gaming",
-          link: "https://www.youtube.com/gaming",
+          text: 'Gaming',
+          link: 'https://www.youtube.com/gaming',
           isDisabled: true,
         },
       ],
       [
         {
-          text: "Sports",
-          link: "https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg",
+          text: 'Sports',
+          link: 'https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg',
         },
         {
-          text: "News",
-          link: "https://www.youtube.com/news",
+          text: 'News',
+          link: 'https://www.youtube.com/news',
         },
         {
-          text: "Fashion & Beauty",
-          link: "https://www.youtube.com/channel/UC1x8rV_f-2yPpzlN0JWZXIQ",
+          text: 'Fashion & Beauty',
+          link: 'https://www.youtube.com/channel/UC1x8rV_f-2yPpzlN0JWZXIQ',
         },
         {
-          text: "Learning",
-          link: "https://www.youtube.com/learning",
+          text: 'Learning',
+          link: 'https://www.youtube.com/learning',
           isDisabled: true,
         },
       ],
       [
         {
-          text: "Report History",
-          link: "https://www.youtube.com/feed/history/report_history",
+          text: 'Report History',
+          link: 'https://www.youtube.com/feed/history/report_history',
         },
         {
-          text: "Help",
-          link: "https://support.google.com/youtube/?hl=en",
+          text: 'Help',
+          link: 'https://support.google.com/youtube/?hl=en',
         },
         {
-          text: "Send Feedback",
-          link: "https://support.google.com/youtube/answer/4347644?hl=en",
+          text: 'Send Feedback',
+          link: 'https://support.google.com/youtube/answer/4347644?hl=en',
         },
         {
-          text: "About",
-          link: "https://www.youtube.com/about/",
+          text: 'About',
+          link: 'https://www.youtube.com/about/',
           isDisabled: true,
         },
       ],
@@ -2324,357 +2350,677 @@ router.get("/shopnews", function (req, res) {
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
-router.get("/shoporder", function (req, res) {
+router.get('/shoporder', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render("shoporder", {
-    layout: "shop",
+  res.render('shoporder', {
+    layout: 'shop',
     navigation: {
       links: [
         {
-          text: "Home",
-          href: "https://github.com/",
+          text: 'Home',
+          href: 'https://github.com/',
         },
         {
-          text: "Contacts",
-          href: "https://www.google.com/",
+          text: 'Contacts',
+          href: 'https://www.google.com/',
         },
         {
-          text: "Help",
-          href: "https://www.youtube.com/",
+          text: 'Help',
+          href: 'https://www.youtube.com/',
         },
         {
-          text: "Exit",
+          text: 'Exit',
           href: null,
           isDisabled: true,
         },
       ],
     },
 
-    header: "Оформлення замовлення",
+    header: 'Оформлення замовлення',
     contacts_data: {
-      title: "Контактні дані",
+      title: 'Контактні дані',
 
       buttons: [
         {
-          text: "Я новий покупець",
+          text: 'Я новий покупець',
           isPrimary: true,
         },
         {
-          text: "Я постійний покупець",
+          text: 'Я постійний покупець',
           isOutline: true,
         },
       ],
       form: {
         input: {
           surname: {
-            label: "Прізвище",
-            placeholder: "Іванов",
-            caption: "Введіть прізвище",
+            label: 'Прізвище',
+            placeholder: 'Іванов',
+            caption: 'Введіть прізвище',
           },
           name: {
-            label: "Ім’я",
-            placeholder: "Іван",
-            caption: "Введіть Ім’я",
+            label: 'Ім’я',
+            placeholder: 'Іван',
+            caption: 'Введіть Ім’я',
           },
           phone: {
-            label: "Мобільний телефон",
-            placeholder: "+38 (XXX) XXX XX XX",
-            caption: "Введіть телефон",
+            label: 'Мобільний телефон',
+            placeholder: '+38 (XXX) XXX XX XX',
+            caption: 'Введіть телефон',
           },
           email: {
-            label: "Пошта",
-            placeholder: "ivanivanov@ukr.net",
-            caption: "Введіть Пошту",
+            label: 'Пошта',
+            placeholder: 'ivanivanov@ukr.net',
+            caption: 'Введіть Пошту',
           },
         },
         switch: [
           {
-            text: "Отримувати інформацію про новинки",
+            text: 'Отримувати інформацію про новинки',
             isActive: false,
           },
           {
-            text: "Отримувати інформацію про знижки",
+            text: 'Отримувати інформацію про знижки',
             isActive: true,
           },
         ],
       },
     },
     action_block: [
-      { text: "Швидке замовлення", isSuccess: true },
-      { text: "Видалити", isDanger: true },
-      { text: "Детальніше", isInfo: true },
+      { text: 'Швидке замовлення', isSuccess: true },
+      { text: 'Видалити', isDanger: true },
+      { text: 'Детальніше', isInfo: true },
     ],
     total: {
-      title: "Всього",
+      title: 'Всього',
       item_list: [
-        { name: "Ноут", price: "25 000 ₴" },
-        { name: "Мишка", price: "25 000 ₴" },
-        { name: "Клава", price: "25 000 ₴" },
+        { name: 'Ноут', price: '25 000 ₴' },
+        { name: 'Мишка', price: '25 000 ₴' },
+        { name: 'Клава', price: '25 000 ₴' },
       ],
       additional_info: [
-        { text: "Всього товарів", value: "75 000 ₴" },
-        { text: "Купони", value: "Немає" },
-        { text: "Доставка", value: "Безкоштовно" },
+        { text: 'Всього товарів', value: '75 000 ₴' },
+        { text: 'Купони', value: 'Немає' },
+        { text: 'Доставка', value: 'Безкоштовно' },
       ],
       total_price: {
-        text: "Всього товарів",
-        value: "75 000 ₴",
+        text: 'Всього товарів',
+        value: '75 000 ₴',
       },
       button: [
         {
-          text: "Підтвердити замовлення",
+          text: 'Підтвердити замовлення',
           isPrimary: true,
         },
         {
-          text: "Відмінити купони",
+          text: 'Відмінити купони',
           isOutline: true,
         },
       ],
     },
     delivery: {
-      title: "Доставка",
+      title: 'Доставка',
       select: [
         {
-          label: "Місто доставки",
-          placeholder: "Оберіть місто доставки",
+          label: 'Місто доставки',
+          placeholder: 'Оберіть місто доставки',
           options: [
-            { value: "1", text: "Київ" },
-            { value: "2", text: "Харків" },
-            { value: "3", text: "Одеса" },
-            { value: "4", text: "Львів" },
-            { value: "5", text: "Дніпро" },
-            { value: "6", text: "Донецьк" },
+            { value: '1', text: 'Київ' },
+            { value: '2', text: 'Харків' },
+            { value: '3', text: 'Одеса' },
+            { value: '4', text: 'Львів' },
+            { value: '5', text: 'Дніпро' },
+            { value: '6', text: 'Донецьк' },
           ],
         },
         {
-          label: "Район доставки",
-          placeholder: "Оберіть район доставки",
+          label: 'Район доставки',
+          placeholder: 'Оберіть район доставки',
           options: [
-            { value: "1", text: "Голосіївський" },
-            { value: "2", text: "Оболонський" },
-            { value: "3", text: "Печерський" },
-            { value: "4", text: "Дарницький" },
-            { value: "5", text: "Деснянський" },
-            { value: "6", text: "Подільський" },
+            { value: '1', text: 'Голосіївський' },
+            { value: '2', text: 'Оболонський' },
+            { value: '3', text: 'Печерський' },
+            { value: '4', text: 'Дарницький' },
+            { value: '5', text: 'Деснянський' },
+            { value: '6', text: 'Подільський' },
           ],
         },
       ],
       delivery_type: [
         {
-          type: "Самовивіз з відділення Нової пошти",
+          type: 'Самовивіз з відділення Нової пошти',
         },
         {
-          type: "Кур’єром Нової пошти",
+          type: 'Кур’єром Нової пошти',
         },
         {
-          type: "Самовивіз з магазину",
+          type: 'Самовивіз з магазину',
         },
         {
-          type: "Доставка закордон",
+          type: 'Доставка закордон',
         },
       ],
       payment: {
-        title: "Оплата",
+        title: 'Оплата',
         list: [
           {
-            type: "Оплата при отриманні",
-            description: "За тарифами перевізника",
+            type: 'Оплата при отриманні',
+            description: 'За тарифами перевізника',
           },
           {
-            type: "Оплатити зараз",
+            type: 'Оплатити зараз',
           },
         ],
       },
       contact: {
-        title: "Контактні дані отримувача",
+        title: 'Контактні дані отримувача',
         surname: {
-          label: "Прізвище",
-          placeholder: "Іванов",
-          caption: "Введіть прізвище",
+          label: 'Прізвище',
+          placeholder: 'Іванов',
+          caption: 'Введіть прізвище',
         },
         name: {
-          label: "Ім’я",
-          placeholder: "Іван",
-          caption: "Введіть Ім’я",
+          label: 'Ім’я',
+          placeholder: 'Іван',
+          caption: 'Введіть Ім’я',
         },
         phone: {
-          label: "Мобільний телефон",
-          placeholder: "+38 (XXX) XXX XX XX",
-          caption: "Введіть телефон",
+          label: 'Мобільний телефон',
+          placeholder: '+38 (XXX) XXX XX XX',
+          caption: 'Введіть телефон',
         },
         email: {
-          label: "Пошта",
-          placeholder: "ivanivanov@ukr.net",
-          caption: "Введіть Пошту",
+          label: 'Пошта',
+          placeholder: 'ivanivanov@ukr.net',
+          caption: 'Введіть Пошту',
         },
       },
       coment: {
-        label: "Коментар",
-        placeholder: "Я хочу, щоб",
+        label: 'Коментар',
+        placeholder: 'Я хочу, щоб',
       },
     },
     coupon: {
-      title: "Купони",
+      title: 'Купони',
       select: {
         availabel_coupon: {
-          label: "Наявні купони",
-          placeholder: "Виберіть купон",
+          label: 'Наявні купони',
+          placeholder: 'Виберіть купон',
           options: [
-            { value: "1", text: "SEEYALATER" },
-            { value: "2", text: "HOTEL10" },
-            { value: "3", text: "DOWNLOAD25" },
+            { value: '1', text: 'SEEYALATER' },
+            { value: '2', text: 'HOTEL10' },
+            { value: '3', text: 'DOWNLOAD25' },
           ],
         },
         friend_coupon: {
-          label: "Купони за запрошених друзів",
-          placeholder: "Виберіть купон",
+          label: 'Купони за запрошених друзів',
+          placeholder: 'Виберіть купон',
           options: [
-            { value: "1", text: "TRAVEL5" },
-            { value: "2", text: "75VACA" },
-            { value: "3", text: "150VACA" },
+            { value: '1', text: 'TRAVEL5' },
+            { value: '2', text: '75VACA' },
+            { value: '3', text: '150VACA' },
           ],
         },
       },
       add: {
         friend: {
-          label: "Запросіть друзів та отримайте ще купонів",
-          placeholder: "Введіть контактні дані друзів через ;",
-          caption: "Напишіть електронні адреси/телефон друзів через “;”",
+          label: 'Запросіть друзів та отримайте ще купонів',
+          placeholder:
+            'Введіть контактні дані друзів через ;',
+          caption:
+            'Напишіть електронні адреси/телефон друзів через “;”',
         },
         colleague: {
-          label: "Запросити колег",
-          placeholder: "Введіть контактні дані колег через ;",
-          caption: "Напишіть електронні адреси/телефон колег через “;”",
+          label: 'Запросити колег',
+          placeholder:
+            'Введіть контактні дані колег через ;',
+          caption:
+            'Напишіть електронні адреси/телефон колег через “;”',
         },
       },
     },
     quiz: {
-      title: "Домоможи краще нам тебе зрозуміти",
+      title: 'Домоможи краще нам тебе зрозуміти',
       preference: {
-        title: "Який тип обладнання ви зацікавлені в придбанні?",
-        options: ["Смартфони", "Ноутбуки", "Планшети", "ПК", "Телевізори"],
+        title:
+          'Який тип обладнання ви зацікавлені в придбанні?',
+        options: [
+          'Смартфони',
+          'Ноутбуки',
+          'Планшети',
+          'ПК',
+          'Телевізори',
+        ],
       },
       your_expirience: {
-        label: "Який у Вас досвід користування ПК",
+        label: 'Який у Вас досвід користування ПК',
       },
       purchase_frequency: {
-        label: "Як часто ви купуєте обладнання?",
-        placeholder: "Оберіть варіант",
+        label: 'Як часто ви купуєте обладнання?',
+        placeholder: 'Оберіть варіант',
         options: [
-          { value: "1", text: "Раз в тиждень" },
-          { value: "2", text: "Раз в місяць" },
-          { value: "3", text: "Раз в рік" },
+          { value: '1', text: 'Раз в тиждень' },
+          { value: '2', text: 'Раз в місяць' },
+          { value: '3', text: 'Раз в рік' },
         ],
       },
       factors: {
         title:
-          "Які з наведених нижче факторів є для вас важливими при купівлі обладнання?",
+          'Які з наведених нижче факторів є для вас важливими при купівлі обладнання?',
         options: [
-          "Ціна",
-          "Репутація бренду",
-          "Якість",
-          "Особливості",
-          "Гарантія",
-          "Доступність",
-          "Обслуговування клієнтів",
+          'Ціна',
+          'Репутація бренду',
+          'Якість',
+          'Особливості',
+          'Гарантія',
+          'Доступність',
+          'Обслуговування клієнтів',
         ],
       },
     },
     footer: [
       [
         {
-          text: "Home",
-          link: "https://www.youtube.com/",
+          text: 'Home',
+          link: 'https://www.youtube.com/',
         },
         {
-          text: "Trending",
-          link: "https://www.youtube.com/feed/trending",
+          text: 'Trending',
+          link: 'https://www.youtube.com/feed/trending',
         },
         {
-          text: "Subscriptions",
-          link: "https://www.youtube.com/feed/subscriptions",
+          text: 'Subscriptions',
+          link: 'https://www.youtube.com/feed/subscriptions',
         },
         {
-          text: "Library",
-          link: "https://www.youtube.com/feed/library",
+          text: 'Library',
+          link: 'https://www.youtube.com/feed/library',
           isDisabled: true,
         },
       ],
       [
         {
-          text: "History",
-          link: "https://www.youtube.com/feed/history",
+          text: 'History',
+          link: 'https://www.youtube.com/feed/history',
         },
         {
-          text: "Your Videos",
-          link: "https://www.youtube.com/feed/my_videos",
+          text: 'Your Videos',
+          link: 'https://www.youtube.com/feed/my_videos',
         },
         {
-          text: "Live",
-          link: "https://www.youtube.com/live",
+          text: 'Live',
+          link: 'https://www.youtube.com/live',
         },
         {
-          text: "Settings",
-          link: "https://www.youtube.com/account",
+          text: 'Settings',
+          link: 'https://www.youtube.com/account',
           isDisabled: true,
         },
       ],
       [
         {
-          text: "Watch Later",
-          link: "https://www.youtube.com/playlist?list=WL",
+          text: 'Watch Later',
+          link: 'https://www.youtube.com/playlist?list=WL',
         },
         {
-          text: "Liked Videos",
-          link: "https://www.youtube.com/playlist?list=LL",
+          text: 'Liked Videos',
+          link: 'https://www.youtube.com/playlist?list=LL',
         },
         {
-          text: "Music",
-          link: "https://www.youtube.com/music",
+          text: 'Music',
+          link: 'https://www.youtube.com/music',
         },
         {
-          text: "Gaming",
-          link: "https://www.youtube.com/gaming",
+          text: 'Gaming',
+          link: 'https://www.youtube.com/gaming',
           isDisabled: true,
         },
       ],
       [
         {
-          text: "Sports",
-          link: "https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg",
+          text: 'Sports',
+          link: 'https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg',
         },
         {
-          text: "News",
-          link: "https://www.youtube.com/news",
+          text: 'News',
+          link: 'https://www.youtube.com/news',
         },
         {
-          text: "Fashion & Beauty",
-          link: "https://www.youtube.com/channel/UC1x8rV_f-2yPpzlN0JWZXIQ",
+          text: 'Fashion & Beauty',
+          link: 'https://www.youtube.com/channel/UC1x8rV_f-2yPpzlN0JWZXIQ',
         },
         {
-          text: "Learning",
-          link: "https://www.youtube.com/learning",
+          text: 'Learning',
+          link: 'https://www.youtube.com/learning',
           isDisabled: true,
         },
       ],
       [
         {
-          text: "Report History",
-          link: "https://www.youtube.com/feed/history/report_history",
+          text: 'Report History',
+          link: 'https://www.youtube.com/feed/history/report_history',
         },
         {
-          text: "Help",
-          link: "https://support.google.com/youtube/?hl=en",
+          text: 'Help',
+          link: 'https://support.google.com/youtube/?hl=en',
         },
         {
-          text: "Send Feedback",
-          link: "https://support.google.com/youtube/answer/4347644?hl=en",
+          text: 'Send Feedback',
+          link: 'https://support.google.com/youtube/answer/4347644?hl=en',
         },
         {
-          text: "About",
-          link: "https://www.youtube.com/about/",
+          text: 'About',
+          link: 'https://www.youtube.com/about/',
+          isDisabled: true,
+        },
+      ],
+    ],
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+// ================================================================
+// ================================================================
+
+// router.get Створює нам один ентпоїнт
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/shopprofile', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('shopprofile', {
+    layout: 'shop',
+    navigation: {
+      links: [
+        {
+          text: 'Home',
+          href: 'https://github.com/',
+        },
+        {
+          text: 'Contacts',
+          href: 'https://www.google.com/',
+        },
+        {
+          text: 'Help',
+          href: 'https://www.youtube.com/',
+        },
+        {
+          text: 'Other',
+          href: null,
+          isDisabled: true,
+        },
+      ],
+    },
+
+    header: 'Мої замовлення',
+
+    purchase: {
+      tabs: ['Всі замовлення', 'Гарантія та повернення'],
+      actionBlock: {
+        input: { placeholder: 'Placeholder' },
+        buttons: [
+          {
+            text: 'Знайти',
+            link: 'https://www.youtube.com/',
+            isSuccess: true,
+          },
+          {
+            text: 'Виділити все',
+            link: 'https://www.youtube.com/',
+            isOutline: true,
+          },
+          {
+            text: 'Очистити все',
+            link: 'https://www.youtube.com/',
+            isDanger: true,
+          },
+        ],
+      },
+      itemList: [
+        {
+          number: '№12587463 від 01.01.2023',
+          status: 'Виконано',
+          amount: { title: 'Сума', value: '25 000 ₴' },
+          images: ['https://picsum.photos/110/100'],
+          button: {
+            text: 'Детальніше',
+            link: 'https://www.youtube.com/',
+            isPrimary: true,
+          },
+        },
+        {
+          number: '№12587463 від 01.01.2023',
+          status: 'Виконано',
+          amount: { title: 'Сума', value: '25 000 ₴' },
+          images: [
+            'https://picsum.photos/110/100',
+            'https://picsum.photos/110/100',
+            'https://picsum.photos/110/100',
+          ],
+          button: {
+            text: 'Детальніше',
+            link: 'https://www.youtube.com/',
+            isPrimary: true,
+          },
+        },
+        {
+          number: '№12587463 від 01.01.2023',
+          status: 'Виконано',
+          amount: { title: 'Сума', value: '25 000 ₴' },
+          images: [
+            'https://picsum.photos/110/100',
+            'https://picsum.photos/110/100',
+          ],
+          button: {
+            text: 'Детальніше',
+            link: 'https://www.youtube.com/',
+            isPrimary: true,
+          },
+        },
+      ],
+    },
+    userInfo: {
+      title: 'Особиста інформація',
+      profileData: {
+        title: 'Особисті дані',
+        fullName: {
+          surname: {
+            title: 'Прізвище',
+            value: 'Іванов',
+          },
+          name: {
+            title: 'Ім’я',
+            value: 'Іван',
+          },
+          middleName: {
+            title: 'По-батькові',
+            value: 'Іванович',
+          },
+        },
+        otherInfo: {
+          birthday: {
+            title: 'Дата народження',
+            value: '01.01.2000',
+          },
+          sex: {
+            title: 'Стать',
+            value: 'Чоловіча',
+          },
+          language: {
+            title: 'Мова',
+            value: 'Українська',
+          },
+        },
+      },
+      buttons: [
+        {
+          text: 'Редагувати',
+          link: 'https://www.youtube.com/',
+          isPrimary: true,
+        },
+        {
+          text: 'Очистити',
+          link: 'https://www.youtube.com/',
+          isSecondary: true,
+        },
+        {
+          text: 'Видалити',
+          link: 'https://www.youtube.com/',
+          isDanger: true,
+        },
+      ],
+      recipients: {
+        title: 'Отримувачі',
+        users: [
+          {
+            name: 'Іванов Іван Іванович',
+            phone: '+38 (098) 222 22 22',
+            button: {
+              text: 'Редагувати',
+              link: 'https://www.youtube.com/',
+            },
+          },
+          {
+            name: 'Петров Петро Петрович',
+            phone: '+38 (098) 111 11 11',
+            button: {
+              text: 'Редагувати',
+              link: 'https://www.youtube.com/',
+            },
+          },
+        ],
+      },
+      contacts: {
+        title: 'Контакти',
+        contactData: {
+          phone: {
+            title: 'Номер телефону',
+            value: '+38 (098) 222 22 22',
+          },
+          additionalPhone: {
+            title: 'Додатковий номер телефону',
+            value: '+38 (098) 111 11 11',
+          },
+          email: {
+            title: 'Електронна адреса',
+            value: 'ivanivanov@ukr.net',
+          },
+        },
+        buttons: [
+          {
+            text: 'Редагувати',
+            link: 'https://www.youtube.com/',
+            isPrimary: true,
+          },
+          {
+            text: 'Очистити',
+            link: 'https://www.youtube.com/',
+            isSecondary: true,
+          },
+          {
+            text: 'Видалити',
+            link: 'https://www.youtube.com/',
+            isDanger: true,
+          },
+        ],
+      },
+    },
+
+    footer: [
+      [
+        {
+          text: 'Home',
+          link: 'https://www.youtube.com/',
+        },
+        {
+          text: 'Trending',
+          link: 'https://www.youtube.com/feed/trending',
+        },
+        {
+          text: 'Subscriptions',
+          link: 'https://www.youtube.com/feed/subscriptions',
+        },
+        {
+          text: 'Library',
+          link: 'https://www.youtube.com/feed/library',
+          isDisabled: true,
+        },
+      ],
+      [
+        {
+          text: 'History',
+          link: 'https://www.youtube.com/feed/history',
+        },
+        {
+          text: 'Your Videos',
+          link: 'https://www.youtube.com/feed/my_videos',
+        },
+        {
+          text: 'Live',
+          link: 'https://www.youtube.com/live',
+        },
+        {
+          text: 'Settings',
+          link: 'https://www.youtube.com/account',
+          isDisabled: true,
+        },
+      ],
+      [
+        {
+          text: 'Watch Later',
+          link: 'https://www.youtube.com/playlist?list=WL',
+        },
+        {
+          text: 'Liked Videos',
+          link: 'https://www.youtube.com/playlist?list=LL',
+        },
+        {
+          text: 'Music',
+          link: 'https://www.youtube.com/music',
+        },
+        {
+          text: 'Gaming',
+          link: 'https://www.youtube.com/gaming',
+          isDisabled: true,
+        },
+      ],
+      [
+        {
+          text: 'Sports',
+          link: 'https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg',
+        },
+        {
+          text: 'News',
+          link: 'https://www.youtube.com/news',
+        },
+        {
+          text: 'Fashion & Beauty',
+          link: 'https://www.youtube.com/channel/UC1x8rV_f-2yPpzlN0JWZXIQ',
+        },
+        {
+          text: 'Learning',
+          link: 'https://www.youtube.com/learning',
+          isDisabled: true,
+        },
+      ],
+      [
+        {
+          text: 'Report History',
+          link: 'https://www.youtube.com/feed/history/report_history',
+        },
+        {
+          text: 'Help',
+          link: 'https://support.google.com/youtube/?hl=en',
+        },
+        {
+          text: 'Send Feedback',
+          link: 'https://support.google.com/youtube/answer/4347644?hl=en',
+        },
+        {
+          text: 'About',
+          link: 'https://www.youtube.com/about/',
           isDisabled: true,
         },
       ],
@@ -2686,4 +3032,4 @@ router.get("/shoporder", function (req, res) {
 // ================================================================
 
 // Підключаємо роутер до бек-енду
-module.exports = router;
+module.exports = router
