@@ -57,6 +57,7 @@ router.get('/summary', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('summary', {
     // ↙ сюди вводимо JSON дані
+    layout: 'default',
 
     page: {
       title: 'Resume | Summary',
@@ -96,6 +97,7 @@ router.get('/skills', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('skills', {
     // ↙ сюди вводимо JSON дані
+    layout: 'default',
 
     page: {
       title: 'Resume | Skills',
@@ -155,6 +157,7 @@ router.get('/education', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('education', {
     // ↙ сюди вводимо JSON дані
+    layout: 'default',
 
     page: {
       title: 'Resume | Education',
@@ -258,18 +261,18 @@ router.get('/work', function (req, res) {
             },
           ],
         },
-        {
-          position: 'Test',
-          company: {
-            name: 'Name of company',
-            url: null,
-          },
-          duration: {
-            from: '23.04.1916',
-            to: '05.04.2229',
-          },
-          projectAmount: 0,
-        },
+        // {
+        //   position: 'Test',
+        //   company: {
+        //     name: 'Name of company',
+        //     url: null,
+        //   },
+        //   duration: {
+        //     from: '23.04.1916',
+        //     to: '05.04.2229',
+        //   },
+        //   projectAmount: 0,
+        // },
       ],
     },
 

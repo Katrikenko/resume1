@@ -1,5 +1,5 @@
-<main>
-    <div class="row">
+<main class="row p-5">
+    <div class="col-12">
         <nav class="row">
             {{#with navigation}}
             {{#each links}}
@@ -31,8 +31,8 @@
 
         <section>
             {{#with city}}
-            <h2>{{title}}</h2>
-            <br>
+            <h2 class="mb-4">{{title}}</h2>
+
             <div class="row gx-2 gy-4">
                 {{#each cards}}
                 <div class="col-6">
@@ -58,8 +58,8 @@
 
         <section>
             {{#with winner}}
-            <h2>{{title}}</h2>
-            <br>
+            <h2 class="mb-4">{{title}}</h2>
+
             <div>
                 {{#with table}}
                 <table class="table">
@@ -91,8 +91,8 @@
 
         <section>
             {{#with gallery}}
-            <h2>{{title}}</h2>
-            <br>
+            <h2 class="mb-4">{{title}}</h2>
+
             <div class="row gx-2">
                 {{#each cards}}
                 <div class="col-4">
@@ -117,8 +117,7 @@
         <section class="row gx-2 gy-3">
             {{#with relaxion}}
             <div class="display-3">{{title}}</div>
-            <br>
-            <br>
+
             {{#each cards}}
             <div class="col-5">
                 <div class="card text-bg-secondary">
@@ -167,8 +166,8 @@
         <section class="row gx-2 gy-3">
 
             {{#with proposition}}
-            <div class="display-2">{{title}}</div>
-            <br>
+            <div class="display-2 mb-3">{{title}}</div>
+
             {{#each card}}
             <div class="col-5">
                 <div class="card text-bg-warning text-light">
@@ -194,25 +193,19 @@
             {{#with footer}}
             <div class="row">
                 <h5>{{title}}</h5>
-                <div class="col-3">
+                <div class="col-2">
                     {{#each navigation}}
-                    <a class="btn btn-link" href="{{href}}">{{text}}</a>
-                    <br>
-                    <br>
+                    <a class="btn btn-link my-3" href="{{href}}">{{text}}</a>
                     {{/each}}
                 </div>
-                <div class="col-3">
+                <div class="col-2">
                     {{#each socialMedia}}
-                    <a class="btn btn-outline-dark" href="{{link}}">{{name}}</a>
-                    <br>
-                    <br>
+                    <a class="btn btn-outline-dark my-3" href="{{link}}">{{name}}</a>
                     {{/each}}
                 </div>
-                <div class="col-3">
+                <div class="col-2">
                     {{#each partners}}
-                    <a class="btn btn-outline-info" href="{{link}}">{{name}}</a>
-                    <br>
-                    <br>
+                    <a class="btn btn-outline-info my-3" href="{{link}}">{{name}}</a>
                     {{/each}}
                 </div>
             </div>

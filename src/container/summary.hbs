@@ -3,9 +3,9 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 }}
 
-<div>
+<div class="row">
     {{#with main}}
-    <main>
+    <main class="col-10">
         <section>
             {{> title data=summary.title big=true}}
             <div>
@@ -16,7 +16,6 @@
         </section>
 
         <section>
-
             {{> title data=experience.title big=false}}
 
             {{#with experience}}

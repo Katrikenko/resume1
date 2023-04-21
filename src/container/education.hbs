@@ -1,11 +1,11 @@
-<div>
+<div class="row">
     {{#with main}}
-    <main>
+    <main class="col-12">
         <section>
             {{> title data="My educations" big=true}}
             <ul>
                 {{#each education}}
-                <li>
+                <li class="m-2">
                     {{name}}
                     {{#unless isEnd}}
                     (still in progress...)
@@ -18,9 +18,9 @@
             {{> title data="My certificates" big=false}}
             <ul>
                 {{#each certificates}}
-                <li>
-                    {{name}}
-                    <br>
+                <li class="m-2">
+                    <b>{{name}}</b>
+
                     ({{id}})
                 </li>
                 {{/each}}
