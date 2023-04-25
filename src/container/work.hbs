@@ -1,34 +1,35 @@
-<div>
+<div class="row">
     {{#with main}}
-    <main>
+    <main class="col-12">
         <section>
             {{> title data="Work history" big=true}}
-            <div>
+            <div class="row">
                 <ul>
                     {{#each works}}
 
                     <li>
-                        <div>{{position}}</div>
+                        <b><ins>{{position}}</ins></b>
 
-                        <br>
-
-                        <div>{{duration.from}} — {{#if duration.to}} {{duration.to}} {{else}} (still working...) {{/if}}
+                        <div class="my-3">{{duration.from}} — {{#if duration.to}} {{duration.to}} {{else}} (still
+                            working...) {{/if}}
                         </div>
 
-                        <br>
+                        <div>
+                            <em>Company:</em>
+                            {{> link text=company.name href=company.url blank=true noLine=true}}
+                        </div>
 
-                        <div>{{> link text=company.name href=company.url blank=true noLine=true}}</div>
+                        <div class="my-4">
+                            <strong>
+                                <h5>Projects ({{projectAmount}})</h5>
+                            </strong>
+                        </div>
 
-                        <br>
-                        <br>
 
-                        <div><strong>Projects ({{projectAmount}})</strong></div>
-
-                        <br>
 
                         <ul>
                             {{#each projects}}
-                            <li>
+                            <li style="list-style: none;" class="col-6">
                                 <div>
                                     {{#if company.url}}
                                     {{> link text=company.name href=company.url blank=true noLine=true}}
@@ -38,29 +39,21 @@
 
                                 </div>
 
-                                <br>
-
                                 <div>
                                     <p>{{about}}</p>
                                 </div>
 
-                                <br>
 
-                                <div><em>Project stacks ({{stackAmount}})</em></div>
+                                <div class="my-3"><em>Project stacks ({{stackAmount}})</em></div>
 
-                                <br>
-
-                                <div>
-                                    {{#each stacks}}
+                            </li>
+                            {{#each stacks}}
                             <li>
                                 {{name}}
                             </li>
                             {{/each}}
-                            <br>
 
-                            <div><em>Project awards</em></div>
-
-                            <br>
+                            <div class="my-3"><em>Project awards</em></div>
 
                             <div>
                                 {{#each awards}}
@@ -69,15 +62,13 @@
                                 </li>
                                 {{/each}}
                             </div>
-                            <br>
+                        </ul>
 
                     </li>
                     {{/each}}
                 </ul>
 
-                <br>
                 </li>
-                <br>
 
                 {{/each}}
                 </ul>

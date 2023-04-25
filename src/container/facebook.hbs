@@ -1,78 +1,102 @@
-<div>
-    <h1>{{name}}</h1>
-    <ul>
-        {{#each users}}
-        <h2><ins>User</ins></h2>
-        <li>
-            <b>Name (Age):</b> <em>{{name}} ({{age}})</em>
-            <br>
-            <br>
-            <b>Gender / id:</b> <em>{{gender}}/{{id}}</em>
-            <br>
-            <hr>
-            <ul>
-                {{#each friends}}
-                <h3><ins>Friends:</ins></h3>
-                <li>
+<div class="row p-5">
+    <div class="col-12">
+        <h1>{{name}}</h1>
+        <ul>
+            {{#each users}}
+            <h2><ins>User</ins></h2>
+            <li>
+                <p>
                     <b>Name (Age):</b> <em>{{name}} ({{age}})</em>
-                    <br>
-                    <br>
+                </p>
+
+                <p>
                     <b>Gender / id:</b> <em>{{gender}}/{{id}}</em>
+                </p>
 
-                    {{#if mutual_friends}}
-                    <h3><ins>Mutual friends:</ins></h3>
-                    <ul>
-                        {{#each mutual_friends}}
-                        <li>
-                            <b>Name (Age):</b> <em>{{name}} ({{age}})</em>
-                            <br>
-                            <br>
-                            <b>Gender / id:</b> <em>{{gender}}/{{id}}</em>
-                            <br>
-                            <br>
-                        </li>
-                        {{/each}}
-                    </ul>
-                    <hr>
-                    {{/if}}
-                </li>
-                {{/each}}
-            </ul>
-            <div>
-                {{#if groups}}
-                <h3><ins>Groups:</ins></h3>
+                <hr>
                 <ul>
-                    {{#each groups}}
+                    {{#each friends}}
+                    <h3 class="my-3"><ins>Friends:</ins></h3>
                     <li>
-                        <b>Name (id):</b> <em>{{name}} ({{id}})</em>
-                        <br>
-                        <br>
-                        <b>Description:</b> <em>{{description}}</em>
-                        <br>
+                        <p>
+                            <b>Name (Age):</b> <em>{{name}} ({{age}})</em>
+                        </p>
 
-                        {{#if members}}
-                        <h3><ins>Members:</ins></h3>
+
+                        <p>
+                            <b>Gender / id:</b> <em>{{gender}}/{{id}}</em>
+                        </p>
+
+                        {{#if mutual_friends}}
+                        <h3 class="my-3"><ins>Mutual friends:</ins></h3>
                         <ul>
-                            {{#each members}}
+                            {{#each mutual_friends}}
                             <li>
-                                <b>Name (Age):</b> <em>{{name}} ({{age}})</em>
-                                <br>
-                                <br>
-                                <b>Gender / id:</b> <em>{{gender}}/{{id}}</em>
-                                <br>
-                                <br>
+                                <p>
+                                    <b>Name (Age):</b> <em>{{name}} ({{age}})</em>
+                                </p>
+
+                                <p>
+                                    <b>Gender / id:</b> <em>{{gender}}/{{id}}</em>
+                                </p>
+
+
                             </li>
                             {{/each}}
                         </ul>
                         <hr>
                         {{/if}}
-
                     </li>
                     {{/each}}
                 </ul>
-                {{/if}}
-            </div>
-        </li>
-        {{/each}}
-    </ul>
+                <div class="my-3">
+                    {{#if groups}}
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        <h5>Groups</h5>
+                    </button>
+                    <div class="collapse" id="collapseExample">
+                        <div class="card card-body">
+                            <ul>
+                                {{#each groups}}
+                                <li>
+                                    <p>
+                                        <b>Name (id):</b> <em>{{name}} ({{id}})</em>
+                                    </p>
+
+                                    <p>
+                                        <b>Description:</b> <em>{{description}}</em>
+                                    </p>
+
+
+                                    {{#if members}}
+                                    <h3 class="my-3"><ins>Members:</ins></h3>
+                                    <ul>
+                                        {{#each members}}
+                                        <li>
+                                            <p>
+                                                <b>Name (Age):</b> <em>{{name}} ({{age}})</em>
+                                            </p>
+
+                                            <p>
+                                                <b>Gender / id:</b> <em>{{gender}}/{{id}}</em>
+                                            </p>
+
+                                        </li>
+                                        {{/each}}
+                                    </ul>
+                                    <hr>
+                                    {{/if}}
+
+                                </li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </div>
+                    {{/if}}
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
 </div>

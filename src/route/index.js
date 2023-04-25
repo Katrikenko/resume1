@@ -44,7 +44,9 @@ router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
+  res.render('index', {
+    layout: 'index.hbs',
+  })
   //                  ↑↑ сюди вводимо JSON дані
 })
 
@@ -55,6 +57,7 @@ router.get('/summary', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('summary', {
     // ↙ сюди вводимо JSON дані
+    layout: 'default',
 
     page: {
       title: 'Resume | Summary',
@@ -94,6 +97,7 @@ router.get('/skills', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('skills', {
     // ↙ сюди вводимо JSON дані
+    layout: 'default',
 
     page: {
       title: 'Resume | Skills',
@@ -153,6 +157,7 @@ router.get('/education', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('education', {
     // ↙ сюди вводимо JSON дані
+    layout: 'default',
 
     page: {
       title: 'Resume | Education',
@@ -256,18 +261,18 @@ router.get('/work', function (req, res) {
             },
           ],
         },
-        {
-          position: 'Test',
-          company: {
-            name: 'Name of company',
-            url: null,
-          },
-          duration: {
-            from: '23.04.1916',
-            to: '05.04.2229',
-          },
-          projectAmount: 0,
-        },
+        // {
+        //   position: 'Test',
+        //   company: {
+        //     name: 'Name of company',
+        //     url: null,
+        //   },
+        //   duration: {
+        //     from: '23.04.1916',
+        //     to: '05.04.2229',
+        //   },
+        //   projectAmount: 0,
+        // },
       ],
     },
 
@@ -1058,85 +1063,85 @@ router.get('/car', function (req, res) {
 // ================================================================
 
 router.get('/js', function (req, res) {
-  router.get('/js', function (req, res) {
-    // res.render генерує нам HTML сторінку
+  // res.render генерує нам HTML сторінку
 
-    //            ↙ cюди вводимо назву файлу з сontainer
-    res.render('js', {
-      layout: 'basic',
-      name: 'JavaScript',
-      description:
-        'JavaScript is a popular high-level, dynamic, and interpreted programming language.',
-      history: {
-        year: 1995,
-        founder: 'Brendan Eich',
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('js', {
+    layout: 'basic',
+    name: 'JavaScript',
+    description:
+      'JavaScript is a popular high-level, dynamic, and interpreted programming language.',
+    history: {
+      year: 1995,
+      founder: 'Brendan Eich',
+    },
+    types: [
+      'Number',
+      'String',
+      'Boolean',
+      'Null',
+      'Undefined',
+      'Symbol',
+      'Object',
+    ],
+    syntax: {
+      variables: ['var', 'let', 'const'],
+      functions: ['function'],
+      conditionals: ['if', 'else', 'switch'],
+      loops: ['for', 'while', 'do-while'],
+      classes: ['class'],
+    },
+    features: [
+      'First-class functions',
+      'Closures',
+      'Dynamic typing',
+      'Prototype-based inheritance',
+      'Asynchronous programming with Promises and async/await',
+      'Modules with import/export statements',
+    ],
+    libraries: [
+      'jQuery',
+      'React',
+      'Angular',
+      'Vue',
+      'Node.js',
+      'Express.js',
+      'Lodash',
+      'Moment.js',
+    ],
+    tools: [
+      'Babel',
+      'Webpack',
+      'ESLint',
+      'Jest',
+      'Mocha',
+      'Chai',
+      'Selenium',
+      'Cypress',
+    ],
+    community: [
+      {
+        name: 'Stack Overflow',
+        type: 'forum',
       },
-      types: [
-        'Number',
-        'String',
-        'Boolean',
-        'Null',
-        'Undefined',
-        'Symbol',
-        'Object',
-      ],
-      syntax: {
-        variables: ['var', 'let', 'const'],
-        functions: ['function'],
-        conditionals: ['if', 'else', 'switch'],
-        loops: ['for', 'while', 'do-while'],
-        classes: ['class'],
+      {
+        name: 'JavaScript Weekly',
+        type: 'newsletter',
       },
-      features: [
-        'First-class functions',
-        'Closures',
-        'Dynamic typing',
-        'Prototype-based inheritance',
-        'Asynchronous programming with Promises and async/await',
-        'Modules with import/export statements',
-      ],
-      libraries: [
-        'jQuery',
-        'React',
-        'Angular',
-        'Vue',
-        'Node.js',
-        'Express.js',
-        'Lodash',
-        'Moment.js',
-      ],
-      tools: [
-        'Babel',
-        'Webpack',
-        'ESLint',
-        'Jest',
-        'Mocha',
-        'Chai',
-        'Selenium',
-        'Cypress',
-      ],
-      community: [
-        {
-          name: 'Stack Overflow',
-          type: 'forum',
-        },
-        {
-          name: 'JavaScript Weekly',
-          type: 'newsletter',
-        },
-        {
-          name: 'The Changelog',
-          type: 'podcast',
-        },
-        {
-          name: 'CSS-Tricks',
-          type: 'blog',
-        },
-      ],
-    })
-    //                  ↑↑ сюди вводимо JSON дані
+      {
+        name: 'The Changelog',
+        type: 'podcast',
+      },
+      {
+        name: 'CSS-Tricks',
+        type: 'blog',
+      },
+    ],
   })
+  //                  ↑↑ сюди вводимо JSON дані
 })
+
+// ================================================================
 // ================================================================
 
 // router.get Створює нам один ентпоїнт
@@ -1147,7 +1152,7 @@ router.get('/task22', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('task22', {
-    layout: 'task22',
+    layout: 'basic',
     page_header: {
       layout: 'basic',
       title: 'InnovaMind',
@@ -3762,7 +3767,7 @@ router.get('/shopcatalog', function (req, res) {
         },
       },
     ],
-    
+
     service: {
       title: 'Our Services',
       description:

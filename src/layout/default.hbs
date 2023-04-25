@@ -18,25 +18,9 @@
 </head>
 
 <body>
-	{{#with header}}
-	<header class="p-5">
-		<div class="mb-2">
-			<h1>{{name.firstname}} {{name.lastname}}</h1>
-		</div>
-		<div class="mb-2">
-			<b>{{position}}</b>
-		</div>
-		<div class="mb-2">
-			<em>{{salary}}</em>
-		</div>
-		<div class="mb-2">
-			<em>{{address}}</em>
-		</div>
-		<hr class="my-5" />
-	</header>
-	{{/with}}
+	{{> header}}
 
-	<div class="mb-5">
+	<div class="mb-4">
 		{{> nav}}
 	</div>
 
